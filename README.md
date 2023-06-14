@@ -10,7 +10,7 @@ Computer နဲ့ လူတွေကြားမှာ သုံးသော La
 ကိုပဲ နားလည်တယ်။
 
 | Programming Process | workflow                   |
-|---------------------|----------------------------|
+| ------------------- | -------------------------- |
 | hardware            |                            |
 | Machine Language    | binary(10101010101010)     |
 | Assembly            | textual(add a,b)           |
@@ -47,7 +47,7 @@ Software ဖြစ်ပါတယ်။ **Translator** သည် abstration က�
 ## Programming Language(Elements)
 
 | Language   | How to Work                  |
-|------------|------------------------------|
+| ---------- | ---------------------------- |
 | Syntax     | Grammar                      |
 | Semantics  | Behind the scenes            |
 | Pragmatics | Short, Stout and Right usage |
@@ -57,9 +57,9 @@ Software ဖြစ်ပါတယ်။ **Translator** သည် abstration က�
 C++ &rarr; Assembly (Intermediate Code) &rarr; Machine Code (native code)
 
 Get **Source Code**
-\
+
 Transform **Intermediate Code**
-\
+
 Transform **Intermediate Code to Native Code**
 
 ## Assembler
@@ -80,16 +80,13 @@ Byte Code can be executed VM or Interpreter. Byte code is running on memory. Byt
 သုံးပြီး execute လုပ်တာဖြစ်တဲ့အတွက်ကြောင့် Stack base interpreter လို့ခေါ်ပါတယ်။
 
 a + b + c
-\
-Push a
-\
-Push b
-\
-Push c
-\
-Mult
-\
-Add
+
+| push a |
+| :----: |
+| push b |
+| push c |
+|  mult  |
+|  add   |
 
 ### Stack Based VM
 
@@ -100,7 +97,7 @@ Add
 Push လုပ်တဲ့အချိန်မှာ ပထမဆုံးစတဲ့ value ကို lowest level stack မှာ စ၍ push လုပ်ပါတယ်။
 
 | Push on stack | Value |
-|:-------------:|:-----:|
+| :-----------: | :---: |
 |    Push d     |   5   |
 |    Push c     |   3   |
 |    Push b     |   2   |
@@ -111,7 +108,7 @@ Multiply operation လုပ်တဲ့ အချိန်မှာ top level s
 multiply လုပ်ပြီးတဲ့အချိန်မှာ value ကို stack ပေါ်မှာ ပြန်တင်ပေးပါတယ်။
 
 | Multiply on stack | Value |
-|:-----------------:|:------|
+| :---------------: | :---- |
 |       Mult        | 15    |
 |      Push b       | 2     |
 
@@ -121,19 +118,19 @@ Add operation သည်လည်း multiply လုပ်တဲ့ operation န
 လုပ်ပြီးတဲ့အချိန်မှ value ကို stack ပေါ်ပြန်တင်ပေးပါတယ်။
 
 | Add on stack | Value |
-|:------------:|:------|
+| :----------: | :---- |
 |     Add      | 17    |
 
 ### &rarr; Store A
 
-| Store |    |
-|-------|----|
-| a     | 17 |
+| Store |     |
+| ----- | --- |
+| a     | 17  |
 
 ## Java/C# Approach?
 
 Java Compiler &rarr; byte code &rarr; Mac &rarr; JVM on Mac
-\
+
 $~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$ &rarr; Window &rarr; JVM on Window
 
 ## Performance
@@ -145,9 +142,9 @@ $~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$ &rarr; Window &rarr; JVM on Window
 ## VM
 
 Byte code &rarr;
-\
+
 $~~~~~~~~~~~~~~~~~$ Interpret
-\
+
 $~~~~~~~~~~~~~~~~~$ Byte code to native code &rarr; JVM Compiler
 
 ## Hotspot Compilation
@@ -167,9 +164,9 @@ Byte Code ကို မ run ခင်မှာ native code ပြောင်း
 ## Transpiler
 
 High Level Language (higher abstraction) &rarr; High Level Language (lower abstraction)
-\
+
 TypeScript &rarr; Babel Transpiler &rarr; JavaScript (Transpilation approach)
-\
+
 JS ECMA 6 &rarr; Babel Transpiler &rarr; JS ECMA 5
 
 ## Lexical Analysis
@@ -189,7 +186,7 @@ int a = 10;
 Grammar rule တွေအတိုင်း syntax မှန်မမှန် စစ်တာကို Syntax Analysis လို့ခေါ်ပါတယ်။
 
 lst = [1,2,3,4,5 $~~~$ ❌
-\
+
 lst = [1,2,3,4,5] $~~$ ✅
 
 ## Type System
@@ -203,9 +200,9 @@ Variable သည် memory အပေါ်မှာ cell တစ်ခုမှာ
 သိမ်းလို့ရတယ် ပြန်ယူသုံးလို့ရတယ် ပြောင်းလို့ရတယ်။ Variable can store any type of value.
 
 Variable &rarr;
-\
+
 $~~~~~~$ Store Value &rarr;
-\
+
 $~~~~~~~~~~~~~~~~~~~$ Have Type
 
 ## Static Typed
@@ -232,6 +229,10 @@ Invalid type operation တွေကို လုပ်ခွင့်ပေး�
 3. Boolean (Ture & False)
 4. String ('Hello')
 
+## Grammar of Assignment
+
+\<variable> = \<expression>
+
 ```python
 price = 1.5
 quantity = 2
@@ -245,22 +246,65 @@ Variable တွေသည် assignment operator တွေရဲ့ right မှ�
 
 ### Expression
 
-value တစ်ခု ပြန်ထုတ်ပေးနိုင်ရင် expression ဖြစ်ပါတယ်။
+value တစ်ခုကို ပြန်ထုတ်ပေးနိုင်ရင် expression ဖြစ်ပါတယ်။
 
 Types of Expression
 
 1. simple expression
 2. complex expression
 
-### 1. Simple Expression
+#### 1. Simple Expression
 
 ```python
 price = 1.5
 quantity = 2
 ```
 
-### 2. Complex Expression
+#### 2. Complex Expression
 
 ```python
 total = price * quantity
 ```
+
+## Variable Naming Conventions
+
+### Must start with letter or underscore
+
+#### Start With Letter
+
+```python
+var_name = "Hello World"
+print(var_name)
+```
+
+#### Start With Underscore
+
+```python
+_var_name = "Hello World"
+print(_var_name)
+```
+
+### Cannot start with a digit
+
+```python
+2_var_name = "Hello World" # error
+print(2_var_name) # error
+```
+
+### Can have up to 256 total characters
+
+### Can include letters, digits, underscores, dollar signs
+
+```python
+_var_name3 = "Hello World"
+print(_var_name3)
+```
+
+### Cannot contain spaces
+
+```python
+var name = "Hello World" #error
+print(var name) #error
+```
+
+### Cannot contain math symbols (+, -, /, \*, %, parentheses)
