@@ -1,6 +1,6 @@
 # Python
 
-## Programming(Problem Sovling)
+## Programming(Problem Solving)
 
 Business Problem တွေကို Solving လုပ်ပေးတာကို Programming လို့ခေါ်တယ်။
 
@@ -199,11 +199,28 @@ lst = [1,2,3,4,5] $~~$ ✅
 
 ## Variable
 
-variable သည် memory အပေါ်မှာ cell တစ်ခုမှာ address အနေနဲ့ သိမ်းထားတာဖြစ်ပါတယ်။ variable သည် value ကို memory အပေါ်မှာ
-သိမ်းလို့ရတယ် ပြန်ယူသုံးလို့ရတယ် ပြောင်းလို့ရတယ်။
+Variable သည် memory အပေါ်မှာ cell တစ်ခုမှာ address အနေနဲ့ သိမ်းထားတာဖြစ်ပါတယ်။ variable သည် value ကို memory အပေါ်မှာ
+သိမ်းလို့ရတယ် ပြန်ယူသုံးလို့ရတယ် ပြောင်းလို့ရတယ်။ Variable can store any type of value.
 
 Variable &rarr;
 \
 $~~~~~~$ Store Value &rarr;
 \
 $~~~~~~~~~~~~~~~~~~~$ Have Type
+
+## Static Typed
+
+Variable have type and cannot change type.
+
+## Dynamic Typed
+
+variable can store any type. value have type.
+
+## Strongly Type
+
+Invalid type operation တွေကို လုပ်ခွင့်မပေးဘူးဆိုရင် Strong Type လို့ခေါ်ပါတယ်။ မတူညီတဲ့ Type ကို operation လုပ်တဲ့အခါ
+လုပ်ခွင့်မပေးတာကို ဆိုလိုတာပါ။
+
+## Weakly Type
+
+Invalid type operation တွေကို လုပ်ခွင့်ပေးတာကို Weakly Type လို့ခေါ်ပါတယ်။
