@@ -224,3 +224,43 @@ Invalid type operation တွေကို လုပ်ခွင့်မပေ�
 ## Weakly Type
 
 Invalid type operation တွေကို လုပ်ခွင့်ပေးတာကို Weakly Type လို့ခေါ်ပါတယ်။
+
+## Types of Data
+
+1. Integers (Number)
+2. Float (3.4)
+3. Boolean (Ture & False)
+4. String ('Hello')
+
+```python
+price = 1.5
+quantity = 2
+total = price * quantity
+print('Total is ', total)
+```
+
+### Read and write
+
+Variable တွေသည် assignment operator တွေရဲ့ right မှာရှိရင် read လုပ်တာဖြစ်ပါတယ်။ left မှာရှိရင် write လုပ်တာဖြစ်ပါတယ်။
+
+### Expression
+
+value တစ်ခု ပြန်ထုတ်ပေးနိုင်ရင် expression ဖြစ်ပါတယ်။
+
+Types of Expression
+
+1. simple expression
+2. complex expression
+
+### 1. Simple Expression
+
+```python
+price = 1.5
+quantity = 2
+```
+
+### 2. Complex Expression
+
+```python
+total = price * quantity
+```
