@@ -269,43 +269,115 @@ total = price * quantity
 
 ## Variable Naming Conventions
 
-### Must start with letter or underscore
+- class Camel Case
+- Other lowercase \_
+- Constant All Capital
 
-#### Start With Letter
+#### Must start with letter or underscore
+
+##### Start With Letter
 
 ```python
 var_name = "Hello World"
 print(var_name)
 ```
 
-#### Start With Underscore
+##### Start With Underscore
 
 ```python
 _var_name = "Hello World"
 print(_var_name)
 ```
 
-### Cannot start with a digit
+#### Cannot start with a digit
 
 ```python
 2_var_name = "Hello World" # error
 print(2_var_name) # error
 ```
 
-### Can have up to 256 total characters
+#### Can have up to 256 total characters
 
-### Can include letters, digits, underscores, dollar signs
+#### Can include letters, digits, underscores, dollar signs
 
 ```python
 _var_name3 = "Hello World"
 print(_var_name3)
 ```
 
-### Cannot contain spaces
+#### Cannot contain spaces
 
 ```python
 var name = "Hello World" #error
 print(var name) #error
 ```
 
-### Cannot contain math symbols (+, -, /, \*, %, parentheses)
+#### Cannot contain math symbols (+, -, /, \*, %, parentheses)
+
+#### Camel Case
+
+```python
+varName = "Hello World"
+print(varName)
+```
+
+#### Case Sensitivity
+
+## Comment
+
+Documentation purposes
+
+```python
+# print('hello world')
+```
+
+## Arithmetic Operators
+
+Arithmetic should only applied to number type.
+
+### Binary Operator
+
+- \+ Add
+- \- Subtract
+- \* Multiply
+- / Divide
+- // Interger Divide
+- \*\* Power
+- % Remainder
+- ( ) Grouping
+
+```python
+a = 10
+b = 3
+
+print('Sum ', a + b) # 13
+print("Subtract ", a - b) # 7
+print("Mult ", a * b) # 30
+print("Div ", a / b) # 3.3333333333333335 # floating point division
+print("Interger Division ", a // b) # 3  # integer division
+print("Power ", a ** b) # 1000
+print("Remainder ", a % b) # 1
+```
+
+Operand အရေအတွက် ၂ ခု လိုက်ရတဲ့ အတွက် binary operator လို့ခေါ်တာဖြစ်ပါတယ်။
+
+|  +   | Operation |
+| :--: | :-------: |
+| a, b |  Operand  |
+
+### Unary Operator
+
+```python
+c = -10
+print('-c ', +-c) # 10
+```
+
+## Order
+
+```python
+a = 10
+b = 3
+c = 4
+
+print('a + b * c ', a + b * c) # 22
+```
