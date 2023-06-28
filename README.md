@@ -229,6 +229,9 @@ Invalid type operation တွေကို လုပ်ခွင့်ပေး�
 2. Float (3.4)
 3. Boolean (Ture & False)
 4. String ('Hello')
+5. Complex
+6. Bytes
+7. Bytearray
 
 ## Grammar of Assignment
 
@@ -267,7 +270,7 @@ quantity = 2
 total = price * quantity
 ```
 
-## Variable Naming Conventions
+### Variable Naming Conventions
 
 - class Camel Case
 - Other lowercase \_
@@ -292,8 +295,10 @@ print(_var_name)
 #### Cannot start with a digit
 
 ```python
-2_var_name = "Hello World" # error
-print(2_var_name) # error
+2
+_var_name = "Hello World"  # error
+print(2
+_var_name)  # error
 ```
 
 #### Can have up to 256 total characters
@@ -308,8 +313,10 @@ print(_var_name3)
 #### Cannot contain spaces
 
 ```python
-var name = "Hello World" #error
-print(var name) #error
+var
+name = "Hello World"  # error
+print(var
+name)  # error
 ```
 
 #### Cannot contain math symbols (+, -, /, \*, %, parentheses)
@@ -350,13 +357,13 @@ Arithmetic should only applied to number type.
 a = 10
 b = 3
 
-print('Sum ', a + b) # 13
-print("Subtract ", a - b) # 7
-print("Mult ", a * b) # 30
-print("Div ", a / b) # 3.3333333333333335 # floating point division
-print("Interger Division ", a // b) # 3  # integer division
-print("Power ", a ** b) # 1000
-print("Remainder ", a % b) # 1
+print('Sum ', a + b)  # 13
+print("Subtract ", a - b)  # 7
+print("Mult ", a * b)  # 30
+print("Div ", a / b)  # 3.3333333333333335 # floating point division
+print("Interger Division ", a // b)  # 3  # integer division
+print("Power ", a ** b)  # 1000
+print("Remainder ", a % b)  # 1
 ```
 
 Operand အရေအတွက် ၂ ခု လိုက်ရတဲ့ အတွက် binary operator လို့ခေါ်တာဖြစ်ပါတယ်။
@@ -369,7 +376,7 @@ Operand အရေအတွက် ၂ ခု လိုက်ရတဲ့ အတ�
 
 ```python
 c = -10
-print('-c ', +-c) # 10
+print('-c ', +-c)  # 10
 ```
 
 ## Order
@@ -379,5 +386,230 @@ a = 10
 b = 3
 c = 4
 
-print('a + b * c ', a + b * c) # 22
+print('a + b * c ', a + b * c)  # 22
+```
+
+## Integer
+
+### Integer in Literal
+
+#### What is literal?
+
+literal is immediately value.
+
+```python
+num_in_dec = 23  # literal
+print(num_in_dec)
+```
+
+### Integer in Binary
+
+only can use 0 or 1
+
+```python
+num_in_binary = 0B11
+print("Num in binary 11 ", num_in_binary) # 3
+```
+
+### Integer in Octal
+
+only can use 0 to 17
+
+```python
+num_in_octal = 0O17
+print('Num in octal ', num_in_octal) # 15
+```
+
+### Integer in Hexa
+
+```python
+num_in_hexa = 0X10
+print('Num in hexa ', num_in_hexa) # 16
+```
+
+#### Check Hexa
+
+hex() သည် language ကပေးထားသော api လေးတွေဖြစ်ပါတယ်။ language မှာပါလာပြီးသာ function တွေဖြစ်ပါတယ်။
+
+```python
+print('32 in hexa ', hex(32)) # 0x20
+```
+
+#### Check Octal
+
+```python
+print('32 in octal ', oct(32)) # 0o40
+```
+
+#### Check Binary
+
+```python
+print('32 in binary ', bin(32)) # 0b100000
+```
+
+#### Calculation hexa and octal
+
+```python
+x = 0x20
+y = 0o40
+print("x + y ", x+y) # 64
+```
+
+## Floating Point
+
+float is not exactly.
+
+```python
+my_float = 23.
+print('my float', my_float) # 23.0
+print('my float type', type(my_float)) # <class 'float'>
+```
+
+### Floating point scientific notation
+
+```python
+my_float = 1.1e2
+print('my float', my_float) # 110.0
+```
+
+```python
+print('0.3 - 0.2', 0.3 - 0.2) # 0.09999999999999998
+```
+
+### Zero
+
+[Different zero](https://www.facebook.com/thet.khine.587/posts/pfbid0nH8fV5jh5a7pLvSbEx8v32Gk3mh5UDwP31K4QtL4s5sodq5dEHdGzCrvF7Gaz3ial)
+
+## Boolean
+
+1. True ( calculation in number 1 )
+2. False ( calculation in number 0 )
+
+```python
+flag = True
+print('flag is ', flag)
+
+flag = False
+print('flag is ', flag)
+
+x = 10
+print('x + flat ', x + flag)
+```
+
+## String
+
+1. ' ' ( Single Quotes )
+
+   ```python
+   my_str = 'Hello'
+   print("my_str ", my_str)
+   ```
+
+2. " " ( Double Quotes )
+
+   ```python
+   my_str = "Hello"
+   print("my_str ", my_str)
+   ```
+
+3. """ """ ( Triple Quotes for **_Multi Line String_** )
+
+   ```python
+   my_str = """This is multiline string
+   Another Line
+   """
+   print("my_str ", my_str)
+   ```
+
+   - Triple quotes can be use as comment.
+
+     ```python
+     """This is comment
+     comment second
+     """
+     ```
+
+### Escape Sequence ( \ )
+
+```python
+my_str = 'Hello "How are you" I\'m fine'
+print("my_str ", my_str)
+```
+
+## Type Casting
+
+type တစ်ခုခုကနေပြီးတော့ နောက်ထပ် type တစ်ခုကိုပြောင်းတာကို type casting လို့ခေါ်ပါတယ်။
+
+### int()
+
+```python
+my_str = '123'
+my_num = 10
+
+print("my_str + my_num ", int(my_str) + my_num) # 133
+print("int(' 1000 ')", int(' 1000 ')) # 1000
+# print("int('10.1')", int('10.1'))  # error
+# print("int('0x10')", int('0x10'))  # error
+print("int(True)", int(True)) # 1
+print("int(False)", int(False)) # 0
+print("int()", int()) # 0
+```
+
+### float()
+
+```python
+print("float(' 1000 ')", float(' 1000 ')) # 1000.0
+print("float('10.1')", float('10.1')) # 10.1
+# print("float('0x10')", float('0x10'))  # error
+print("float(True)", float(True)) # 1.0
+print("float(False)", float(False)) # 0.0
+print("float()", float())  # 0.0
+```
+
+### bool()
+
+Falsely Value
+
+1. False
+2. 0
+3. ""
+4. []
+5. ()
+
+```python
+print("bool(0) ", bool(0)) # False
+print("bool(1) ", bool(1)) # True
+print("bool(0.0) ", bool(0.0)) # False
+print("bool(1.0) ", bool(1.0)) # True
+print("bool('False')", bool("False")) # True
+print("bool('')", bool('')) # False
+print("bool([])", bool([])) # False
+print("bool(())", bool(())) # False
+```
+
+## ID
+
+ID is memory address.
+
+```python
+x = 10
+y = 10
+
+print("id of x", id(x)) # 4378909616
+print("id of y", id(y)) # 4378909936
+print("id of x", hex(id(y))) # 0x105825bb0
+print("id of y", hex(id(y))) # 0x105825cf0
+```
+
+## Bytes()
+
+bytes must be in range(0, 256). Bytes သည် ပြောင်းလဲခြင်း(mutate) လုပ်လို့မရပါဘူး။
+
+```python
+x = [0, 10, 25, 30]
+my_bytes = bytes(x)
+
+print("my_bytes", my_bytes)
+print("type of my_bytes", type(my_bytes))
+print("type of my_bytes", my_bytes[1])
 ```
