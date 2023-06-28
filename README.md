@@ -601,7 +601,7 @@ print("id of x", hex(id(y))) # 0x105825bb0
 print("id of y", hex(id(y))) # 0x105825cf0
 ```
 
-## Bytes()
+### Bytes()
 
 bytes must be in range(0, 256). Bytes သည် ပြောင်းလဲခြင်း(mutate) လုပ်လို့မရပါဘူး။
 
