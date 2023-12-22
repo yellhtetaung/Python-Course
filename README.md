@@ -10,7 +10,7 @@ Computer နဲ့ လူတွေကြားမှာ သုံးသော La
 ကိုပဲ နားလည်တယ်။
 
 | Programming Process | workflow                   |
-| ------------------- | -------------------------- |
+|---------------------|----------------------------|
 | hardware            |                            |
 | Machine Language    | binary(10101010101010)     |
 | Assembly            | textual(add a,b)           |
@@ -47,7 +47,7 @@ Software ဖြစ်ပါတယ်။ **Translator** သည် abstration က�
 ## Programming Language(Elements)
 
 | Language   | How to Work                  |
-| ---------- | ---------------------------- |
+|------------|------------------------------|
 | Syntax     | Grammar                      |
 | Semantics  | Behind the scenes            |
 | Pragmatics | Short, Stout and Right usage |
@@ -82,7 +82,7 @@ Byte Code can be executed VM or Interpreter. Byte code is running on memory. Byt
 a + b + c
 
 | push a |
-| :----: |
+|:------:|
 | push b |
 | push c |
 |  mult  |
@@ -92,46 +92,47 @@ a + b + c
 
 &rarr; a = b + c \* d; (b=2, c=3, d=5)
 
-### &rarr; Push
+### Push
 
 Push လုပ်တဲ့အချိန်မှာ ပထမဆုံးစတဲ့ value ကို lowest level stack မှာ စ၍ push လုပ်ပါတယ်။
 
 | Push on stack | Value |
-| :-----------: | :---: |
+|:-------------:|:-----:|
 |    Push d     |   5   |
 |    Push c     |   3   |
 |    Push b     |   2   |
 
-### &rarr; Multiply
+### Multiply
 
 Multiply operation လုပ်တဲ့ အချိန်မှာ top level stack မှာရှိတဲ့ value နှစ်ခုကို pop လုပ်ပြီးတော့မှ multiply လုပ်တယ်။
 multiply လုပ်ပြီးတဲ့အချိန်မှာ value ကို stack ပေါ်မှာ ပြန်တင်ပေးပါတယ်။
 
 | Multiply on stack | Value |
-| :---------------: | :---- |
+|:-----------------:|:------|
 |       Mult        | 15    |
 |      Push b       | 2     |
 
-### &rarr; Add
+### Add
 
 Add operation သည်လည်း multiply လုပ်တဲ့ operation နဲ့ အတူတူပါပဲ။ value နှစ်ကို pop လုပ်ပြီးတော့မှ Add လုပ်တယ်။ Add
 လုပ်ပြီးတဲ့အချိန်မှ value ကို stack ပေါ်ပြန်တင်ပေးပါတယ်။
 
 | Add on stack | Value |
-| :----------: | :---- |
+|:------------:|:------|
 |     Add      | 17    |
 
-### &rarr; Store A
+### Store A
 
-| Store |     |
-| ----- | --- |
-| a     | 17  |
+| Store |    |
+|-------|----|
+| a     | 17 |
 
 ## Java/C# Approach?
 
 Java Compiler &rarr; byte code &rarr; Mac &rarr; JVM on Mac
 
-$~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$ &rarr; Window &rarr; JVM on Window
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&rarr; Window &rarr; JVM on Window
 
 ## Performance
 
@@ -143,9 +144,10 @@ $~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$ &rarr; Window &rarr; JVM on Window
 
 Byte code &rarr;
 
-$~~~~~~~~~~~~~~~~~$ Interpret
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Interpret
 
-$~~~~~~~~~~~~~~~~~$ Byte code to native code &rarr; JVM Compiler
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Byte code to native code &rarr; JVM
+Compiler
 
 ## Hotspot Compilation
 
@@ -176,7 +178,7 @@ Character String ကနေပြီးတော့ သက်ဆိုင်ရ�
 int a = 10;
 
 | int |
-| :-: |
+|:---:|
 |  a  |
 |  =  |
 | 10  |
@@ -186,9 +188,9 @@ int a = 10;
 
 Grammar rule တွေအတိုင်း syntax မှန်မမှန် စစ်တာကို Syntax Analysis လို့ခေါ်ပါတယ်။
 
-lst = [1,2,3,4,5 $~~~$ ❌
+lst = [1,2,3,4,5 &nbsp; ❌
 
-lst = [1,2,3,4,5] $~~$ ✅
+lst = [1,2,3,4,5] &nbsp; ✅
 
 ## Type System
 
@@ -202,9 +204,9 @@ Variable သည် memory အပေါ်မှာ cell တစ်ခုမှာ
 
 Variable &rarr;
 
-$~~~~~~$ Store Value &rarr;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Store Value &rarr;
 
-$~~~~~~~~~~~~~~~~~~~$ Have Type
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Have Type
 
 ## Static Typed
 
@@ -267,6 +269,8 @@ quantity = 2
 #### 2. Complex Expression
 
 ```python
+price = 1.5
+quantity = 2
 total = price * quantity
 ```
 
@@ -295,10 +299,8 @@ print(_var_name)
 #### Cannot start with a digit
 
 ```python
-2
-_var_name = "Hello World"  # error
-print(2
-_var_name)  # error
+# 2_var_name = "Hello World"  # error
+# print(2_var_name)  # error
 ```
 
 #### Can have up to 256 total characters
@@ -313,10 +315,8 @@ print(_var_name3)
 #### Cannot contain spaces
 
 ```python
-var
-name = "Hello World"  # error
-print(var
-name)  # error
+varname = "Hello World"  # error
+print(varname)  # error
 ```
 
 #### Cannot contain math symbols (+, -, /, \*, %, parentheses)
@@ -340,7 +340,7 @@ Documentation purposes
 
 ## Arithmetic Operators
 
-Arithmetic should only applied to number type.
+Arithmetic should only apply to number type.
 
 ### Binary Operator
 
@@ -369,7 +369,7 @@ print("Remainder ", a % b)  # 1
 Operand အရေအတွက် ၂ ခု လိုက်ရတဲ့ အတွက် binary operator လို့ခေါ်တာဖြစ်ပါတယ်။
 
 |  +   | Operation |
-| :--: | :-------: |
+|:----:|:---------:|
 | a, b |  Operand  |
 
 ### Unary Operator
@@ -408,7 +408,7 @@ only can use 0 or 1
 
 ```python
 num_in_binary = 0B11
-print("Num in binary 11 ", num_in_binary) # 3
+print("Num in binary 11 ", num_in_binary)  # 3
 ```
 
 ### Integer in Octal
@@ -417,14 +417,14 @@ only can use 0 to 17
 
 ```python
 num_in_octal = 0O17
-print('Num in octal ', num_in_octal) # 15
+print('Num in octal ', num_in_octal)  # 15
 ```
 
 ### Integer in Hexa
 
 ```python
 num_in_hexa = 0X10
-print('Num in hexa ', num_in_hexa) # 16
+print('Num in hexa ', num_in_hexa)  # 16
 ```
 
 #### Check Hexa
@@ -432,19 +432,19 @@ print('Num in hexa ', num_in_hexa) # 16
 hex() သည် language ကပေးထားသော api လေးတွေဖြစ်ပါတယ်။ language မှာပါလာပြီးသာ function တွေဖြစ်ပါတယ်။
 
 ```python
-print('32 in hexa ', hex(32)) # 0x20
+print('32 in hexa ', hex(32))  # 0x20
 ```
 
 #### Check Octal
 
 ```python
-print('32 in octal ', oct(32)) # 0o40
+print('32 in octal ', oct(32))  # 0o40
 ```
 
 #### Check Binary
 
 ```python
-print('32 in binary ', bin(32)) # 0b100000
+print('32 in binary ', bin(32))  # 0b100000
 ```
 
 #### Calculation hexa and octal
@@ -452,7 +452,7 @@ print('32 in binary ', bin(32)) # 0b100000
 ```python
 x = 0x20
 y = 0o40
-print("x + y ", x+y) # 64
+print("x + y ", x + y)  # 64
 ```
 
 ## Floating Point
@@ -461,19 +461,19 @@ float is not exactly.
 
 ```python
 my_float = 23.
-print('my float', my_float) # 23.0
-print('my float type', type(my_float)) # <class 'float'>
+print('my float', my_float)  # 23.0
+print('my float type', type(my_float))  # <class 'float'>
 ```
 
 ### Floating point scientific notation
 
 ```python
 my_float = 1.1e2
-print('my float', my_float) # 110.0
+print('my float', my_float)  # 110.0
 ```
 
 ```python
-print('0.3 - 0.2', 0.3 - 0.2) # 0.09999999999999998
+print('0.3 - 0.2', 0.3 - 0.2)  # 0.09999999999999998
 ```
 
 ### Zero
@@ -498,36 +498,34 @@ print('x + flat ', x + flag)
 
 ## String
 
-1. ' ' ( Single Quotes )
+String is immutable.
 
-   ```python
-   my_str = 'Hello'
-   print("my_str ", my_str)
-   ```
+- ' ' ( Single Quotes )
 
-2. " " ( Double Quotes )
+```python
+my_str = 'Hello'
+print("my_str ", my_str)
+```
 
-   ```python
-   my_str = "Hello"
-   print("my_str ", my_str)
-   ```
+- " " ( Double Quotes )
 
-3. """ """ ( Triple Quotes for **_Multi Line String_** )
+```python
+my_str = "Hello"
+print("my_str ", my_str)
+```
 
-   ```python
-   my_str = """This is multiline string
-   Another Line
-   """
-   print("my_str ", my_str)
-   ```
+- """ """ ( Triple Quotes for **_Multi Line String_** )
 
-   - Triple quotes can be use as comment.
+```python
+my_str = """This is multiline string
+Another Line
+"""
+print("my_str ", my_str)
 
-     ```python
-     """This is comment
-     comment second
-     """
-     ```
+"""This is comment
+comment second
+"""
+```
 
 ### Escape Sequence ( \ )
 
@@ -538,31 +536,34 @@ print("my_str ", my_str)
 
 ## Type Casting
 
-type တစ်ခုခုကနေပြီးတော့ နောက်ထပ် type တစ်ခုကိုပြောင်းတာကို type casting လို့ခေါ်ပါတယ်။
+type တစ်ခုခုကနေပြီးတော့ နောက်ထပ် type တစ်ခုခုကိုပြောင်းတာကို type casting လို့ခေါ်ပါတယ်။
 
 ### int()
+
+Default အားဖြင့် Base 10 ကိုပဲ Type Convert လုပ်လို့ရပါတယ်။
 
 ```python
 my_str = '123'
 my_num = 10
 
-print("my_str + my_num ", int(my_str) + my_num) # 133
-print("int(' 1000 ')", int(' 1000 ')) # 1000
-# print("int('10.1')", int('10.1'))  # error
-# print("int('0x10')", int('0x10'))  # error
-print("int(True)", int(True)) # 1
-print("int(False)", int(False)) # 0
-print("int()", int()) # 0
+print("my_str + my_num", int(my_str) + my_num)  # 133
+print("int(' 1000 ')", int(' 1000 '))  # 1000
+# print("int(' 10.1 ')", int(' 10.1 ')) # invalid literal
+# print("int('0x10')", int('0x10')) # invalid literal
+print("int(True)", int(True))  # 1
+print("int(False)", int(False))  # 0
+print("int()", int())  # 0
+
 ```
 
 ### float()
 
 ```python
-print("float(' 1000 ')", float(' 1000 ')) # 1000.0
-print("float('10.1')", float('10.1')) # 10.1
-# print("float('0x10')", float('0x10'))  # error
-print("float(True)", float(True)) # 1.0
-print("float(False)", float(False)) # 0.0
+print("float(' 1000 ')", float(' 1000 '))  # 1000.0
+print("float(' 10.1 ')", float(' 10.1 '))  # 10.1
+# print("int('0x10')", float('0x10'))  # invalid literal
+print("float(True)", float(True))  # 1.0
+print("float(False)", float(False))  # 0.0
 print("float()", float())  # 0.0
 ```
 
@@ -577,39 +578,134 @@ Falsely Value
 5. ()
 
 ```python
-print("bool(0) ", bool(0)) # False
-print("bool(1) ", bool(1)) # True
-print("bool(0.0) ", bool(0.0)) # False
-print("bool(1.0) ", bool(1.0)) # True
-print("bool('False')", bool("False")) # True
-print("bool('')", bool('')) # False
-print("bool([])", bool([])) # False
-print("bool(())", bool(())) # False
+print("bool(0) ", bool(0))  # False
+print("bool(1) ", bool(1))  # True
+print("bool(0.0) ", bool(0.0))  # False
+print("bool(1.0) ", bool(1.0))  # True
+print("bool('False')", bool("False"))  # True
+print("bool('')", bool(''))  # False
+print("bool([])", bool([]))  # False
+print("bool(())", bool(()))  # False
 ```
 
 ## ID
 
-ID is memory address.
+ID is unique identifier.
 
 ```python
-x = 10
-y = 10
+x = 500
+y = 500
 
-print("id of x", id(x)) # 4378909616
-print("id of y", id(y)) # 4378909936
-print("id of x", hex(id(y))) # 0x105825bb0
-print("id of y", hex(id(y))) # 0x105825cf0
+
+def hello():
+    k = 500
+    print("id of k ", hex(id(k)))
+
+
+hello()  # 0x101832ea8
+print("Id of x ", hex(id(x)))  # 0x101832ea8
+print("Id of y ", hex(id(y)))  # 0x101832ea8
+```
+
+same memory location ရှိနေလားကို စစ်ချင်ရင် id နဲ့ မစစ်ပဲနဲ့ `is` နဲ့ စစ်သင့်တယ်။ id are not same in python2.
+
+```python
+x = 1500
+y = 1500
+print("x is y ", x is y)
+
+
+def hello():
+    k = 1500
+    print("id of k ", id(k))
+
+
+hello()  # 4333236688
+print("Id of x ", id(x))  # 4333236688
+print("Id of y ", id(y))  # 4333236688
+```
+
+- python3
+
+```bash
+x is y  True
+id of k  4310561232
+Id of x  4310561232
+Id of y  4310561232
+```
+
+- python2
+
+```bash
+('x is y ', True)
+('id of k ', 140194292463392)
+('Id of x ', 140194292463344)
+('Id of y ', 140194292463344)
 ```
 
 ### bytes()
 
-bytes must be in range(0, 256). Bytes သည် ပြောင်းလဲခြင်း(mutate) လုပ်လို့မရပါဘူး။
+bytes must be in range 0 to 256. Bytes သည် ပြောင်းလဲခြင်း(mutate) လုပ်လို့မရပါဘူး။
 
 ```python
 x = [0, 10, 25, 30]
 my_bytes = bytes(x)
 
-print("my_bytes", my_bytes)
-print("type of my_bytes", type(my_bytes))
-print("type of my_bytes", my_bytes[1])
+print("my_bytes", my_bytes)  # b'\x00\n\x19\x1e'
+print("type my_bytes", type(my_bytes))  # <class 'bytes'>
+print("my_bytes[1]", my_bytes[1])  # 10
+```
+
+### bytearray()
+
+byte array is immutable.
+
+```python
+x = [0, 10, 25, 30]
+my_bytes = bytearray(x)
+
+print("my_bytes", my_bytes)  # bytearray(b'\x00\n\x19\x1e')
+print("type my_bytes", type(my_bytes))  # <class 'bytearray'>
+print("my_bytes[1]", my_bytes[1])  # 10
+
+my_bytes[0] = 100
+print("my_bytes", my_bytes)  # bytearray(b'd\n\x19\x1e')
+print("my_bytes", my_bytes[0])  # 100
+```
+
+## List `[]`
+
+- List is **collection of values**.
+- List ကို index or အခန်းနံပါတ်တွေနဲ့ ပြန်ခေါ်သုံးလို့ရပါတယ်။
+- List are **heterogeneous**.(Types တွေ အများကြီးပါလို့ရတယ်)
+- List are **Linear Data Structure**
+- List is mutable
+
+```python
+ages = [10, 20, 28, 45]
+
+print("Ages ", ages)
+print("Ages[0] ", ages[0])
+print("Ages[3] ", ages[3])
+print("Sum ", sum(ages))
+print("Average ", sum(ages) / len(ages))
+```
+
+## Tuple `()`
+
+- Tuple is immutable
+- Tuple can only readable.
+
+```python
+ages = (10, 20)
+
+print("Ages ", ages)
+print("Ages[0] ", ages[0])
+print("Ages[1] ", ages[1])
+print("len ages ", len(ages))
+print("type of ", type(ages))
+# ages[0] = 18
+
+mg_mg = ("Mg Mg", 18, "UCSY")
+print("mg mg", mg_mg[0])
 ```
