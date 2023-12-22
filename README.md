@@ -22,12 +22,12 @@ Computer နဲ့ လူတွေကြားမှာ သုံးသော La
 Assembly Language သည် machine code အပေါ်မှာပဲ ရှိတယ်။ Machine Code ကို Assembly Language (Textual) နဲ့ပြတာကို Assembly
 Code လို့ခေါ်တယ်။
 
-## Abstration
+## Abstraction
 
 Complex details တွေကို hide လုပ်ပြီးတော့ လွယ်ကူတဲ့ interface ကနေ သုံးလို့ရတယ်။ Complex ဖြစ်နေတဲ့ identies တွေကို hide
-လုပ်ပြီးတော့ အရာအဖြစ် အစားထိုးတာကို abstration လုပ်တယ်လို့ ခေါ်ပါတယ်။ Assembly Language သည် Machine Language နဲ့ ရေးတဲ့
-binary တွေကို hide လုပ်ပြီးတော့ textual နဲ့ရေးနိုင်တာကို abstration လို့ခေါ်ပါတယ်။ Complex ဖြစ်နေတဲ့အရာကို Complex
-ဖြစ်နေတဲ့အတိုင်းမသုံးပဲနဲ့ ပိုလွယ်ကူအရာအဖြစ် ထိန်းချုပ်လိုက်တာကို abstration လို့ခေါ်ပါတယ်။
+လုပ်ပြီးတော့ အရာအဖြစ် အစားထိုးတာကို abstraction လုပ်တယ်လို့ ခေါ်ပါတယ်။ Assembly Language သည် Machine Language နဲ့ ရေးတဲ့
+binary တွေကို hide လုပ်ပြီးတော့ textual နဲ့ရေးနိုင်တာကို abstraction လို့ခေါ်ပါတယ်။ Complex ဖြစ်နေတဲ့အရာကို Complex
+ဖြစ်နေတဲ့အတိုင်းမသုံးပဲနဲ့ ပိုလွယ်ကူအရာအဖြစ် ထိန်းချုပ်လိုက်တာကို abstraction လို့ခေါ်ပါတယ်။
 
 Assembly &rarr; Translator &rarr; Machine Language
 
@@ -56,11 +56,9 @@ Software ဖြစ်ပါတယ်။ **Translator** သည် abstration က�
 
 C++ &rarr; Assembly (Intermediate Code) &rarr; Machine Code (native code)
 
-Get **Source Code**
-
-Transform **Intermediate Code**
-
-Transform **Intermediate Code to Native Code**
+- Get **Source Code**
+- Transform **Intermediate Code**
+- Transform **Intermediate Code to Native Code**
 
 ## Assembler
 
@@ -82,25 +80,25 @@ Byte Code can be executed VM or Interpreter. Byte code is running on memory. Byt
 a + b + c
 
 | push a |
-|:------:|
+|:-------|
 | push b |
 | push c |
-|  mult  |
-|  add   |
+| mult   |
+| add    |
 
 ### Stack Based VM
 
-&rarr; a = b + c \* d; (b=2, c=3, d=5)
+- a = b + c \* d; (b=2, c=3, d=5)
 
 ### Push
 
 Push လုပ်တဲ့အချိန်မှာ ပထမဆုံးစတဲ့ value ကို lowest level stack မှာ စ၍ push လုပ်ပါတယ်။
 
 | Push on stack | Value |
-|:-------------:|:-----:|
-|    Push d     |   5   |
-|    Push c     |   3   |
-|    Push b     |   2   |
+|:--------------|:-----:|
+| Push d        |   5   |
+| Push c        |   3   |
+| Push b        |   2   |
 
 ### Multiply
 
@@ -108,9 +106,9 @@ Multiply operation လုပ်တဲ့ အချိန်မှာ top level s
 multiply လုပ်ပြီးတဲ့အချိန်မှာ value ကို stack ပေါ်မှာ ပြန်တင်ပေးပါတယ်။
 
 | Multiply on stack | Value |
-|:-----------------:|:------|
-|       Mult        | 15    |
-|      Push b       | 2     |
+|:------------------|:------|
+| Mult              | 15    |
+| Push b            | 2     |
 
 ### Add
 
@@ -118,8 +116,8 @@ Add operation သည်လည်း multiply လုပ်တဲ့ operation န
 လုပ်ပြီးတဲ့အချိန်မှ value ကို stack ပေါ်ပြန်တင်ပေးပါတယ်။
 
 | Add on stack | Value |
-|:------------:|:------|
-|     Add      | 17    |
+|:-------------|:------|
+| Add          | 17    |
 
 ### Store A
 
@@ -165,11 +163,9 @@ Byte Code ကို မ run ခင်မှာ native code ပြောင်း
 
 ## Transpiler
 
-High Level Language (higher abstraction) &rarr; High Level Language (lower abstraction)
-
-TypeScript &rarr; Babel Transpiler &rarr; JavaScript (Transpilation approach)
-
-JS ECMA 6 &rarr; Babel Transpiler &rarr; JS ECMA 5
+- High Level Language (higher abstraction) &rarr; High Level Language (lower abstraction)
+- TypeScript &rarr; Babel Transpiler &rarr; JavaScript (Transpilation approach)
+- JS ECMA 6 &rarr; Babel Transpiler &rarr; JS ECMA 5
 
 ## Lexical Analysis
 
@@ -197,7 +193,7 @@ lst = [1,2,3,4,5] &nbsp; ✅
 1. Static Typed
 2. Dynamic Typed
 
-## Variable
+### Variable
 
 Variable သည် memory အပေါ်မှာ cell တစ်ခုမှာ address အနေနဲ့ သိမ်းထားတာဖြစ်ပါတယ်။ variable သည် value ကို memory အပေါ်မှာ
 သိမ်းလို့ရတယ် ပြန်ယူသုံးလို့ရတယ် ပြောင်းလို့ရတယ်။ Variable can store any type of value.
@@ -208,20 +204,20 @@ Variable &rarr;
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Have Type
 
-## Static Typed
+### Static Typed
 
 Variable have type and cannot change type.
 
-## Dynamic Typed
+### Dynamic Typed
 
 variable can store any type. value have type.
 
-## Strongly Type
+### Strongly Type
 
 Invalid type operation တွေကို လုပ်ခွင့်မပေးဘူးဆိုရင် Strong Type လို့ခေါ်ပါတယ်။ မတူညီတဲ့ Type ကို operation လုပ်တဲ့အခါ
 လုပ်ခွင့်မပေးတာကို ဆိုလိုတာပါ။
 
-## Weakly Type
+### Weakly Type
 
 Invalid type operation တွေကို လုပ်ခွင့်ပေးတာကို Weakly Type လို့ခေါ်ပါတယ်။
 
@@ -237,7 +233,7 @@ Invalid type operation တွေကို လုပ်ခွင့်ပေး�
 
 ## Grammar of Assignment
 
-\<variable> = \<expression>
+`<variable> = <expression>`
 
 ```python
 price = 1.5
@@ -256,17 +252,14 @@ value တစ်ခုကို ပြန်ထုတ်ပေးနိုင်�
 
 Types of Expression
 
-1. simple expression
-2. complex expression
-
-#### 1. Simple Expression
+- simple expression
 
 ```python
 price = 1.5
 quantity = 2
 ```
 
-#### 2. Complex Expression
+- complex expression
 
 ```python
 price = 1.5
@@ -279,56 +272,54 @@ total = price * quantity
 - class Camel Case
 - Other lowercase \_
 - Constant All Capital
-
-#### Must start with letter or underscore
-
-##### Start With Letter
+- Must start with letter or underscore
+- Start With Letter
 
 ```python
 var_name = "Hello World"
 print(var_name)
 ```
 
-##### Start With Underscore
+- Start With Underscore
 
 ```python
 _var_name = "Hello World"
 print(_var_name)
 ```
 
-#### Cannot start with a digit
+- Cannot start with a digit
 
 ```python
 # 2_var_name = "Hello World"  # error
 # print(2_var_name)  # error
 ```
 
-#### Can have up to 256 total characters
+- Can have up to 256 total characters
 
-#### Can include letters, digits, underscores, dollar signs
+- Can include letters, digits, underscores, dollar signs
 
 ```python
 _var_name3 = "Hello World"
 print(_var_name3)
 ```
 
-#### Cannot contain spaces
+- Cannot contain spaces
 
 ```python
 varname = "Hello World"  # error
 print(varname)  # error
 ```
 
-#### Cannot contain math symbols (+, -, /, \*, %, parentheses)
+- Cannot contain math symbols (+, -, /, \*, %, parentheses)
 
-#### Camel Case
+- Camel Case
 
 ```python
 varName = "Hello World"
 print(varName)
 ```
 
-#### Case Sensitivity
+- Case Sensitivity
 
 ## Comment
 
@@ -344,14 +335,14 @@ Arithmetic should only apply to number type.
 
 ### Binary Operator
 
-- \+ Add
-- \- Subtract
-- \* Multiply
-- / Divide
-- // Interger Divide
-- \*\* Power
-- % Remainder
-- ( ) Grouping
+- Add `+`
+- Subtract `-`
+- Multiply `*`
+- Divide `/`
+- Integer Divide `//`
+- Power `**`
+- Remainder `%`
+- Grouping `()`
 
 ```python
 a = 10
@@ -368,18 +359,18 @@ print("Remainder ", a % b)  # 1
 
 Operand အရေအတွက် ၂ ခု လိုက်ရတဲ့ အတွက် binary operator လို့ခေါ်တာဖြစ်ပါတယ်။
 
-|  +   | Operation |
-|:----:|:---------:|
-| a, b |  Operand  |
+| +    | Operation |
+|:-----|:----------|
+| a, b | Operand   |
 
-### Unary Operator
+#### Unary Operator
 
 ```python
 c = -10
 print('-c ', +-c)  # 10
 ```
 
-## Order
+### Order
 
 ```python
 a = 10
@@ -391,9 +382,9 @@ print('a + b * c ', a + b * c)  # 22
 
 ## Integer
 
-### Integer in Literal
+Integer in Literal
 
-#### What is literal?
+### What is literal?
 
 literal is immediately value.
 
@@ -427,7 +418,7 @@ num_in_hexa = 0X10
 print('Num in hexa ', num_in_hexa)  # 16
 ```
 
-#### Check Hexa
+### Check Hexa
 
 hex() သည် language ကပေးထားသော api လေးတွေဖြစ်ပါတယ်။ language မှာပါလာပြီးသာ function တွေဖြစ်ပါတယ်။
 
@@ -435,19 +426,19 @@ hex() သည် language ကပေးထားသော api လေးတွေ�
 print('32 in hexa ', hex(32))  # 0x20
 ```
 
-#### Check Octal
+### Check Octal
 
 ```python
 print('32 in octal ', oct(32))  # 0o40
 ```
 
-#### Check Binary
+### Check Binary
 
 ```python
 print('32 in binary ', bin(32))  # 0b100000
 ```
 
-#### Calculation hexa and octal
+### Calculation hexa and octal
 
 ```python
 x = 0x20
@@ -643,7 +634,7 @@ Id of y  4310561232
 ('Id of y ', 140194292463344)
 ```
 
-### bytes()
+## bytes()
 
 bytes must be in range 0 to 256. Bytes သည် ပြောင်းလဲခြင်း(mutate) လုပ်လို့မရပါဘူး။
 
@@ -656,7 +647,7 @@ print("type my_bytes", type(my_bytes))  # <class 'bytes'>
 print("my_bytes[1]", my_bytes[1])  # 10
 ```
 
-### bytearray()
+## bytearray()
 
 byte array is immutable.
 
@@ -693,7 +684,7 @@ print("Average ", sum(ages) / len(ages))
 
 ## Tuple `()`
 
-- Tuple is immutable
+- Tuple is **immutable**
 - Tuple can only readable.
 
 ```python
@@ -708,4 +699,18 @@ print("type of ", type(ages))
 
 mg_mg = ("Mg Mg", 18, "UCSY")
 print("mg mg", mg_mg[0])
+```
+
+## Range
+
+- range ကို looping ပတ်တဲ့ အခါမှာ အဓိကသုံးပါတယ်။
+- range ကို counter control လုပ်ဖို့အတွက်သုံးပါတယ်။
+
+```python
+x = range(3)
+
+print("typeof x ", type(x))
+print("x ", x)
+for i in range(1, 5):
+    print(i)
 ```
