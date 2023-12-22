@@ -701,10 +701,15 @@ mg_mg = ("Mg Mg", 18, "UCSY")
 print("mg mg", mg_mg[0])
 ```
 
-## Range
+## Ranges
 
 - range ကို looping ပတ်တဲ့ အခါမှာ အဓိကသုံးပါတယ်။
 - range ကို counter control လုပ်ဖို့အတွက်သုံးပါတယ်။
+
+### Syntax
+
+- `range(stop)`
+- `range(start, stop, step)`
 
 ```python
 x = range(3)
@@ -713,4 +718,24 @@ print("typeof x ", type(x))
 print("x ", x)
 for i in range(1, 5):
     print(i)
+``` 
+
+## Set `{}`
+
+- Set is **mutable**
+- List ထဲကနေ duplicate value တွေကို ဖယ်ချင်တဲ့ အခါမှာ set ကိုသုံးတယ်။
+- Unique Element ကို သိမ်းချင်တယ်ဆိုရင် `set` ကိုသုံးလို့ရတယ်။
+
+```python
+my_set = {3, 1, 2, 10, 11, 1}
+print('my set ', my_set)
+
+my_set = set([3, 1, 2, 10, 11, 1])
+print('my set ', my_set)
+
+my_set.add(100)
+print('my set ', my_set)
+
+my_set.remove(11)
+print('my set ', my_set)
 ```
