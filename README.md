@@ -991,14 +991,15 @@ bitwise only accept number type.
 
 - Bitwise **AND** `&`
 - Bitwise **OR** `|`
-- Bitwise **NOT** `!`
+- Bitwise **XOR** `^`
 - Bitwise **Complement** `~`
 - Bitwise **Left** `<<`
 - Bitwise **Right** `>>`
 
 ### Bitwise AND Operator `&`
 
-```pythonx = 2
+```python
+x = 2
 y = 3
 
 print(" bin(2) ", bin(2))  # 0b10
@@ -1036,4 +1037,19 @@ def get_false():
 
 
 print("get_false() | get_true() ", get_false() | get_true())  # True
+```
+
+### Bitwise XOR Operator `^`
+
+- True `0`
+- False `1`
+
+```python
+print(" 2 ^ 3 ", 2 ^ 3)  # 1
+```
+
+### Bitwise Complement Operator `~`
+
+```python
+print(bin(2), ~2)  # 0b10 -3
 ```

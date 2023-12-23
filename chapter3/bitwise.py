@@ -21,3 +21,6 @@ def get_false():
 
 print("get_false() & get_true() ", get_false() & get_true())  # False
 print("get_false() | get_true() ", get_false() | get_true())  # True
+
+print(" 2 ^ 3 ", 2 ^ 3)  # 1
+print(bin(2), ~2)  # 0b10 -3
