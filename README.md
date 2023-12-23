@@ -881,7 +881,7 @@ print(" 3 > 2 > 1 ", 3 > 2 > 1)  # 3 > 2 and 2 > 1
 print("True > 1 ", True > 1)
 ```
 
-## Equality Operator
+### Equality Operator
 
 - Equal `==`
 - Not Equal `!=`
@@ -904,4 +904,54 @@ print("tp1 > tp2", tp1 > tp2)
 print("tp1 < tp2", tp1 < tp2)
 print("tp1 != tp2", tp1 != tp2)
 print("tp1 == tp2", tp1 == tp2)
+```
+
+### Logical Operator
+
+- And `and`
+- Or `or`
+- Not `not`
+
+#### And Operator
+
+```python
+print("True and True", True and True)  # True
+print("True and False", True and False)  # False
+print("False and False", False and False)  # False
+print("False and True", False and True)  # False
+```
+
+###### And Semantic
+
+- Left True &rarr; return Right hand side
+
+```python
+print(" 'Hello' and 1 ", 'Hello' and 1)  # 1
+print(" 'Hello' and 300 ", 'Hello' and 300)  # 300
+```
+
+- Left False &rarr; return Left hand side
+
+```python
+print(" '' and 'Hello' ", '' and 'Hello')  # ''
+print(" 0 and 'Hello' ", 0 and 'Hello')  # 0
+print(" [] and 'Hello' ", [] and 'Hello')  # []
+print(" () and 'Hello' ", () and 'Hello')  # ()
+print(" False and 'Hello' ", False and 'Hello')  # False
+```
+
+#### Or Operator
+
+```python
+print("True or True", True or True)  # True
+print("True or False", True or False)  # True
+print("False or False", False or False)  # False
+print("False or True", False or True)  # False
+```
+
+#### Not Operator
+
+```python
+print("not True", not True)  # False
+print("not False", not False)  # True
 ```
