@@ -1,9 +1,9 @@
-def getTrue():
+def get_true():
     print("Get True")
     return True
 
 
-def getFalse():
+def get_false():
     print("Get False")
     return False
 

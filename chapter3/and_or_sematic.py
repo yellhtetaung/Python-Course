@@ -1,15 +1,15 @@
-def getTrue():
+def get_true():
     print("Get True")
     return True
 
 
-def getFalse():
+def get_false():
     print("Get False")
     return False
 
 
-# print("getTrue and getTrue", getTrue() and getTrue())
-# print("getFalse and getTrue", getFalse() and getTrue())
+# print("get_true and get_true", get_true() and get_true())
+# print("get_false and get_true", get_false() and get_true())
 
-# print("getTrue or getTrue", getTrue() or getTrue())
-print("getFalse or getTrue", getFalse() or getTrue())
+# print("get_true or get_true", get_true() or get_true())
+print("get_false or get_true", get_false() or get_true())
