@@ -725,6 +725,7 @@ for i in range(1, 5):
 - Set is **mutable**
 - List ထဲကနေ duplicate value တွေကို ဖယ်ချင်တဲ့ အခါမှာ set ကိုသုံးတယ်။
 - Unique Element ကို သိမ်းချင်တယ်ဆိုရင် `set` ကိုသုံးလို့ရတယ်။
+- set သည် order ကို presearch မလုပ်ဘူး။
 
 ```python
 my_set = {3, 1, 2, 10, 11, 1}
@@ -738,4 +739,169 @@ print('my set ', my_set)
 
 my_set.remove(11)
 print('my set ', my_set)
+```
+
+## Frozenset `frozenset()`
+
+- frozen set is immutable
+- `frozenset(set)`
+
+```python
+my_set = {3, 1, 2, 10, 11, 1}
+frozen_set = frozenset(my_set)
+
+print('frozen set ', frozen_set)
+# frozen_set.add(100);
+```
+
+## Dictionary
+
+- dictionary မှာ key & value ရှိတယ်။ key သည် unique ဖြစ်ဖို့လိုပါတယ်။
+- dictionary ကို accept လုပ်တဲ့ အခါမှာ key နဲ့ accept လုပ်ရပါတယ်။
+
+```python
+students = {"roll-1": "Mg Mg", "roll-2": "Aung Aung"}
+
+print("Dictionary ", students)
+
+print("Get roll-1 ", students.get('roll-1'))
+
+students['roll-2'] = 'Hla Maung'
+print("Dictionary ", students)
+```
+
+## Input Function
+
+- python program တွေမှာ ပြင်ပက data input တွေကို လိုချင်ရင် input function ကိုသုံးလို့ရပါတယ်။
+- input က string ကို return ပြန်ပေးမယ်။ ထို့ကြောင့် arithmetic operation တွေ လုပ်တဲ့ အခါမှာ string
+  ဖြစ်တဲ့ အတွက်ကြောင့် `+` ဆိုရင် string concat လုပ်ပေးသွားမှာပဲ ဖြစ်ပါတယ်။ ထို့ကြောင့် type cast
+  လုပ်ပေးရပါတယ်။
+
+### Syntax
+
+`input()`
+
+```python
+x = float(input("Enter x"))
+y = float(input("Enter y"))
+
+print("Add ", x + y)
+print("Sub ", x - y)
+print("Div ", x / y)
+print("Mult ", x * y)
+```
+
+## Eval Function
+
+- eval function သည် string နှစ်ခုကို evaluate လုပ်တာဖြစ်ပါတယ်။
+- eval function ထဲမှာ python code တွေရေးလို့ရတယ်။
+
+```python
+x = float(input("Enter x"))
+y = float(input("Enter y"))
+
+equation = input("Enter equation ")
+z = eval(equation)
+print("Output ", z)
+```
+
+## Command Line Arguments
+
+- console program ကို ပေးရဲ့ argument ကို command line လို့ခေါ်တယ်။
+- command line သည် list နဲ့ရပါတယ်။
+
+```python
+from sys import argv
+
+print("No of command line argument ", len(argv))
+print("command line arguments ", argv)
+```
+
+## Delete
+
+- variable တွေကို ဖျက်ချင်ရင် delete `del` ကိုသုံးလို့ရပါတယ်။
+- variable တွေကို ဖျက်မယ်ဆိုရင်တော့ မသုံးသင့်ဘူး။
+- Object ထဲက element တွေကို ဖျက်မယ်ဆိုရင်တော့ သုံးသင့်ပါတယ်။
+
+```python
+x = 10
+print("x is ", x)
+
+del x
+# print("x is", x)
+```
+
+## Operator
+
+- Operation လုပ်တဲ့ကောင်တွေကို operator လို့ခေါ်ပါတယ်။
+- Type ပေါ်မှာ မူတည်ပြီးတော့ ဘယ် operation လုပ်လို့ရမယ်ဆိုတဲ့ ကန့်သတ်ချက်တွေတော့ ရှိတယ်။
+
+operator &rarr; `+, -, /, *`
+\
+a+b &rarr; operand
+
+### Arithmetic Operator
+
+`+, -, /, *`
+
+- arithmetic operator တွေသည် type တူမှ operation လုပ်လို့ရတယ်။
+- arithmetic operator တွေရဲ့ type တွေသည် ကြီးတဲ့ ကောင်တွေရဲ့ type ကိုယူပြီးတော့ output ထုတ်ပေးတယ်။ (float သည် integer
+  ထက်ကြီးပါတယ်)
+
+### Relational Operator
+
+- Less than equal `<=`
+- Less than `<`
+- Greater than equal `>=`
+- Greater than `>`
+
+1. relational operator သည် Boolean ကို output ထုတ်ပေးတယ်။
+2. relational operator တွေမှာ string တွေကို dictionary order နဲ့ စစ်ပါတယ်။
+3. relational operator တွေမှာ list, tuple တွေကို element တစ်ခုချင်းစီကို တိုက်စစ်ပါတယ်။
+
+```python
+x = 20
+y = 15
+
+print("x < y ", x < y)
+print("x > y ", x > y)
+print("10 >= 10", 10 >= 10)
+print("10 <= 10", 10 <= 10)
+
+print("'apple' > 'orange'", 'apple' > 'orange')  # False
+print("'apple' < 'orange'", 'apple' < 'orange')  # True
+
+# print("'apple' < 3", 'apple' < 3)  # True
+print("True > True", True > True)
+print("True > False", True > False)
+
+print("True > 10", True > 10)
+
+print(" 3 > 2 > 1 ", 3 > 2 > 1)  # 3 > 2 and 2 > 1
+print("True > 1 ", True > 1)
+```
+
+## Equality Operator
+
+- Equal `==`
+- Not Equal `!=`
+
+```python
+print("10 == 10", 10 == 10)
+print("10 != 10", 10 != 10)
+
+lst1 = [10, 20, 50]
+lst2 = [10, 20, 50]
+
+print("lst1 == lst2", lst1 == lst2)
+print("lst1 > lst2", lst1 > lst2)
+print("lst1 < lst2", lst1 < lst2)
+
+tp1 = (10, 20, 50)
+tp2 = (20, 30, 40)
+
+print("tp1 > tp2", tp1 > tp2)
+print("tp1 < tp2", tp1 < tp2)
+print("tp1 != tp2", tp1 != tp2)
+print("tp1 == tp2", tp1 == tp2)
 ```
