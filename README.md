@@ -921,16 +921,19 @@ print("False and False", False and False)  # False
 print("False and True", False and True)  # False
 ```
 
-###### And Semantic
+##### And Semantic
 
-- Left True &rarr; return Right hand side
+ဘယ်ဘက်က value သည် falsy ဖြစ်နေခဲ့မယ်ဆိုရင် ညာဘက်ကို ဆက်ပြီးအလုပ်မလုပ်တော့ဘူး။ truthy ဖြစ်တယ်ဆိုတော့မှ ညာဘက်ကို
+အလုပ်လုပ်ပါတယ်။
+
+- If left is truthy return right hand side.
 
 ```python
 print(" 'Hello' and 1 ", 'Hello' and 1)  # 1
 print(" 'Hello' and 300 ", 'Hello' and 300)  # 300
 ```
 
-- Left False &rarr; return Left hand side
+- If left is falsy return left hand side.
 
 ```python
 print(" '' and 'Hello' ", '' and 'Hello')  # ''
@@ -949,9 +952,35 @@ print("False or False", False or False)  # False
 print("False or True", False or True)  # False
 ```
 
-#### Not Operator
+##### Or Semantic
+
+ဘယ်ဘက်က truthy ဖြစ်ခဲ့ရင် ညာဘက်ကို ဆက်ပြီးတော့ အလုပ်မလုပ်တော့ဘူး။ falsy ဖြစ်နေတယ် ဆိုတော့မှ ညာဘက်ကို ဆက်ပြီးတော့
+အလုပ်လုပ်ပါတယ်။
+
+- If left is truthy return left hand side.
 
 ```python
-print("not True", not True)  # False
-print("not False", not False)  # True
+print("True or True", True or True)  # True
+print(" 'hello' or 0 => ", 'hello' or 0)  # hello
+print(" 1 or 0 => ", 1 or 0)  # 1
+print(" [1,20] or 0 => ", [1, 20] or 0)  # [1, 20]
+```
+
+- If left is falsy return right hand side
+
+```python
+print("False or 'Hello' ", False or 'Hello')  # Hello
+print("'' or 'Hello' ", '' or 'Hello')  # Hello
+print("'' or 1000 ", '' or 1000)  # 1000
+print("[] or 1000 ", [] or 1000)  # 1000
+```
+
+#### Not Operator
+
+not operator သည် true ကို false ပြောင်းတယ်။ false ကို true ပြောင်းတယ်။
+
+```python
+print("not True ", not True)  # False
+print("not False ", not False)  # True
+print("not 'Hello' ", not 'Hello')  # False
 ```
