@@ -5,7 +5,7 @@ print("Sum ", a + b)
 print("Subtract ", a - b)
 print("Mult ", a * b)
 print("Div ", a / b)  # floating point division
-print("Interger Division ", a // b)  # integer division
+print("Integer Division ", a // b)  # integer division
 print("Power ", a**b)
 print("Remainder ", a % b)
 

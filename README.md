@@ -399,8 +399,8 @@ print(num_in_dec)
 only can use 0 or 1
 
 ```python
-num_in_binary = 0B11
-print("Num in binary 11 ", num_in_binary)  # 3
+num_in_binary = 0b11
+print("Number in binary 0b11 => ", num_in_binary)  # 3
 ```
 
 ### Integer in Octal
@@ -408,15 +408,15 @@ print("Num in binary 11 ", num_in_binary)  # 3
 only can use 0 to 17
 
 ```python
-num_in_octal = 0O17
-print('Num in octal ', num_in_octal)  # 15
+num_in_octal = 0o17
+print("Number in octal 0o17 => ", num_in_octal)  # 15
 ```
 
 ### Integer in Hexa
 
 ```python
-num_in_hexa = 0X10
-print('Num in hexa ', num_in_hexa)  # 16
+num_in_hex = 0x10
+print("Number in hexa 0x10 => ", num_in_hex)  # 16
 ```
 
 ### Check Hexa
@@ -424,19 +424,19 @@ print('Num in hexa ', num_in_hexa)  # 16
 hex() သည် language ကပေးထားသော api လေးတွေဖြစ်ပါတယ်။ language မှာပါလာပြီးသာ function တွေဖြစ်ပါတယ်။
 
 ```python
-print('32 in hexa ', hex(32))  # 0x20
+print("32 in hexa => ", hex(32))  # 0x20
 ```
 
 ### Check Octal
 
 ```python
-print('32 in octal ', oct(32))  # 0o40
+print("32 in octal => ", oct(32))  # 0x20
 ```
 
 ### Check Binary
 
 ```python
-print('32 in binary ', bin(32))  # 0b100000
+print("32 in binary => ", bin(32))  # 0b100000
 ```
 
 ### Calculation hexa and octal
@@ -479,13 +479,13 @@ print('0.3 - 0.2', 0.3 - 0.2)  # 0.09999999999999998
 
 ```python
 flag = True
-print('flag is ', flag)
+print("flag is", flag)  # True
 
 flag = False
-print('flag is ', flag)
+print("flag is", flag)  # False
 
 x = 10
-print('x + flat ', x + flag)
+print("x + flag", x + flag)  # 10
 ```
 
 ## String
@@ -507,6 +507,8 @@ print("my_str ", my_str)
 ```
 
 - """ """ ( Triple Quotes for **_Multi Line String_** )
+
+Triple code string can used as comment.
 
 ```python
 my_str = """This is multiline string
@@ -577,6 +579,7 @@ print("bool(1.0) ", bool(1.0))  # True
 print("bool('False')", bool("False"))  # True
 print("bool('')", bool(''))  # False
 print("bool([])", bool([]))  # False
+print("bool([1])", bool([1]))  # True
 print("bool(())", bool(()))  # False
 ```
 
