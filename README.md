@@ -1,21 +1,22 @@
 # Python
 
-## Programming(Problem Solving)
+## Programming ( Problem Solving )
 
-Business Problem တွေကို Solving လုပ်ပေးတာကို Programming လို့ခေါ်တယ်။
+- Computer is a programmable machine.
+- Business Problem တွေကို Solving လုပ်ပေးတာကို Programming လို့ခေါ်တယ်။
 
 ## Programming Language
 
 Computer နဲ့ လူတွေကြားမှာ သုံးသော Language တစ်ခုဖြစ်ပါတယ်။ Computer သည် Electronic Device ဖြစ်ပါတယ်။ Computer သည် Binary
 ကိုပဲ နားလည်တယ်။
 
-| Programming Process | workflow                   |
-|---------------------|----------------------------|
-| hardware            |                            |
-| Machine Language    | binary(10101010101010)     |
-| Assembly            | textual(add a,b)           |
-| C++                 | a + b (or) cout<<"Hello"   |
-| Python              | print('Hello From Python') |
+| Programming Process | Workflow                     |
+|---------------------|------------------------------|
+| hardware            |                              |
+| Machine Language    | binary(10101010101010)       |
+| Assembly            | textual(add a,b)             |
+| C++                 | `cout<<"Hello"`              |
+| Python              | `print('Hello From Python')` |
 
 ## Assembly Language
 
@@ -25,9 +26,9 @@ Code လို့ခေါ်တယ်။
 ## Abstraction
 
 Complex details တွေကို hide လုပ်ပြီးတော့ လွယ်ကူတဲ့ interface ကနေ သုံးလို့ရတယ်။ Complex ဖြစ်နေတဲ့ identies တွေကို hide
-လုပ်ပြီးတော့ အရာအဖြစ် အစားထိုးတာကို abstraction လုပ်တယ်လို့ ခေါ်ပါတယ်။ Assembly Language သည် Machine Language နဲ့ ရေးတဲ့
-binary တွေကို hide လုပ်ပြီးတော့ textual နဲ့ရေးနိုင်တာကို abstraction လို့ခေါ်ပါတယ်။ Complex ဖြစ်နေတဲ့အရာကို Complex
-ဖြစ်နေတဲ့အတိုင်းမသုံးပဲနဲ့ ပိုလွယ်ကူအရာအဖြစ် ထိန်းချုပ်လိုက်တာကို abstraction လို့ခေါ်ပါတယ်။
+လုပ်ပြီးတော့ လွယ်ကူရိုးရှင်းတဲ့အရာအဖြစ် အစားထိုးတာကို abstraction လုပ်တယ်လို့ ခေါ်ပါတယ်။ Assembly Language သည် Machine
+Language နဲ့ ရေးတဲ့ binary တွေကို hide လုပ်ပြီးတော့ textual နဲ့ရေးနိုင်တာကို abstraction လို့ခေါ်ပါတယ်။ Complex
+ဖြစ်နေတဲ့အရာကို Complex ဖြစ်နေတဲ့အတိုင်းမသုံးပဲနဲ့ ပိုလွယ်ကူအရာအဖြစ် ထိန်းချုပ်လိုက်တာကို abstraction လို့ခေါ်ပါတယ်။
 
 Assembly &rarr; Translator &rarr; Machine Language
 
@@ -44,7 +45,7 @@ Software ဖြစ်ပါတယ်။ **Translator** သည် abstration က�
 4. Transpiler
 5. JIT/AOT Compiler
 
-## Programming Language(Elements)
+## How to learn Programming Language ( Elements )
 
 | Language   | How to Work                  |
 |------------|------------------------------|
@@ -128,9 +129,8 @@ Add operation သည်လည်း multiply လုပ်တဲ့ operation န
 ## Java/C# Approach?
 
 Java Compiler &rarr; byte code &rarr; Mac &rarr; JVM on Mac
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&rarr; Window &rarr; JVM on Window
+\
+Java Compiler &rarr; byte code &rarr; Window &rarr; JVM on Window
 
 ## Performance
 
@@ -141,35 +141,36 @@ Java Compiler &rarr; byte code &rarr; Mac &rarr; JVM on Mac
 ## VM
 
 Byte code &rarr;
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Interpret
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Byte code to native code &rarr; JVM
-Compiler
+\
+Interpret
+\
+Byte code to native code &rarr; JVM Compiler
 
 ## Hotspot Compilation
 
 Classes တွေမှာ သုံးကြိမ်လေးကြိမ်ထပ် သုံးတဲ့ code တွေကို compile လုပ်တဲ့အချိန် မှာ hotspot compilation ဖြစ်လာပါတယ်။
 
-## JIT
+## JIT ( Just In Time Compilation )
 
 Just in Time Compilation သည် byte code ကနေ native code ကို ပြောင်းလိုက်တာကို JIT လို့ခေါ်ပါတယ်။
 JIT သည် byte code ရဲ့ တစ်စိတ်တစ်ပိုင်းကိုပဲ native code ပြောင်းတာဖြစ်ပါတယ်။
 
-## AOT
+## AOT ( Ahead Of Time )
 
 Byte Code ကို မ run ခင်မှာ native code ပြောင်းလိုက်တာကို AOT လို့ခေါ်ပါတယ်။ AOT ကတော့ Byte code အကုန်လုံးကို native code
 အဖြစ်ပြောင်းလိုက်ပါတယ်။
 
 ## Transpiler
 
-- High Level Language (higher abstraction) &rarr; High Level Language (lower abstraction)
-- TypeScript &rarr; Babel Transpiler &rarr; JavaScript (Transpilation approach)
+- High Level Language ( higher abstraction ) &rarr; High Level Language ( lower abstraction )
+- TypeScript &rarr; Babel Transpiler &rarr; JavaScript ( Transpilation approach )
 - JS ECMA 6 &rarr; Babel Transpiler &rarr; JS ECMA 5
+
+![Compilation Process](./assets/compilation-process.png)
 
 ## Lexical Analysis
 
-Character String ကနေပြီးတော့ သက်ဆိုင်ရာ အသေးဆုံး unit တွေ ခွဲခြားလိုက်တာကို lexical analysis လို့ခေါ်ပါတယ်။
+Character String ကနေပြီးတော့ သက်ဆိုင်ရာ အသေးဆုံး unit တွေအဖြစ် ခွဲခြားလိုက်တာကို lexical analysis လို့ခေါ်ပါတယ်။
 
 int a = 10;
 
@@ -184,9 +185,13 @@ int a = 10;
 
 Grammar rule တွေအတိုင်း syntax မှန်မမှန် စစ်တာကို Syntax Analysis လို့ခေါ်ပါတယ်။
 
-lst = [1,2,3,4,5 &nbsp; ❌
+lst = [1,2,3,4,5 ❌
 
-lst = [1,2,3,4,5] &nbsp; ✅
+lst = [1,2,3,4,5] ✅
+
+## What is Abstract Syntax Tree ( AST )
+
+![Abstract Syntax Tree](./assets/abstract-syntax-tree.png)
 
 ## Type System
 
@@ -198,11 +203,7 @@ lst = [1,2,3,4,5] &nbsp; ✅
 Variable သည် memory အပေါ်မှာ cell တစ်ခုမှာ address အနေနဲ့ သိမ်းထားတာဖြစ်ပါတယ်။ variable သည် value ကို memory အပေါ်မှာ
 သိမ်းလို့ရတယ် ပြန်ယူသုံးလို့ရတယ် ပြောင်းလို့ရတယ်။ Variable can store any type of value.
 
-Variable &rarr;
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Store Value &rarr;
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Have Type
+Variable &rarr; Store Value &rarr; Have Type
 
 ### Static Typed
 
@@ -223,10 +224,10 @@ Invalid type operation တွေကို လုပ်ခွင့်ပေး�
 
 ## Types of Data
 
-1. Integers (Number)
-2. Float (3.4)
-3. Boolean (Ture & False)
-4. String ('Hello')
+1. Integers ( Number )
+2. Float ( 3.4 )
+3. Boolean ( Ture & False )
+4. String ( 'Hello', "Hello", """Hello""" )
 5. Complex
 6. Bytes
 7. Bytearray
@@ -270,7 +271,7 @@ total = price * quantity
 ### Variable Naming Conventions
 
 - class Camel Case
-- Other lowercase \_
+- Other lowercase\_
 - Constant All Capital
 - Must start with letter or underscore
 - Start With Letter
@@ -706,7 +707,7 @@ print("mg mg", mg_mg[0])
 - range ကို looping ပတ်တဲ့ အခါမှာ အဓိကသုံးပါတယ်။
 - range ကို counter control လုပ်ဖို့အတွက်သုံးပါတယ်။
 
-### Syntax
+### Ranges Syntax
 
 - `range(stop)`
 - `range(start, stop, step)`
@@ -718,7 +719,7 @@ print("typeof x ", type(x))
 print("x ", x)
 for i in range(1, 5):
     print(i)
-``` 
+```
 
 ## Set `{}`
 
@@ -777,7 +778,7 @@ print("Dictionary ", students)
   ဖြစ်တဲ့ အတွက်ကြောင့် `+` ဆိုရင် string concat လုပ်ပေးသွားမှာပဲ ဖြစ်ပါတယ်။ ထို့ကြောင့် type cast
   လုပ်ပေးရပါတယ်။
 
-### Syntax
+### Input Function Syntax
 
 `input()`
 
