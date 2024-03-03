@@ -663,7 +663,7 @@ Id of y  4310561232
 
 ## Bytes `bytes()`
 
-bytes must be in range 0 to 256. Bytes သည် ပြောင်းလဲခြင်း(mutate) လုပ်လို့မရပါဘူး။ bytes ကို read လုပ်မယ်ဆိုရင်တော့
+bytes must be in range 0 to 256. Bytes is mutable။ bytes ကို read လုပ်မယ်ဆိုရင်တော့
 bytes() ကိုသုံးသင့်ပါတယ်။
 
 ```python
@@ -698,7 +698,7 @@ print("my_bytes", my_bytes[0])  # 100
 - List ကို index or အခန်းနံပါတ်တွေနဲ့ ပြန်ခေါ်သုံးလို့ရပါတယ်။
 - List is **heterogeneous**. ( Types တွေ အများကြီးပါလို့ရတယ် )
 - List is **Linear Data Structure**
-- List is **mutable**
+- List is **Immutable**
 - List သည် same collection ကို သိမ်းတဲ့အခါမျိုးမှာ ပိုပြီးတော့ အသုံးပြုကြပါတယ်။
 
 ```python
@@ -718,7 +718,7 @@ print("Ages ", ages)  # [10, 20, 28, 45, 20]
 
 ## Tuple `()`
 
-- Tuple is **immutable**
+- Tuple is **mutable**
 - Tuple can only readable.
 - Tuple သည် different collection ကို သိမ်းတဲ့ အခါမျိုးမှာ ပိုပြီးတော့ အသုံးပြုကြပါတယ်။
 
@@ -755,7 +755,7 @@ for i in range(1, 10, 2):
 
 ## Set `{} | set()`
 
-- Set is **mutable**
+- Set is **Immutable**
 - List ထဲကနေ duplicate value တွေကို ဖယ်ချင်တဲ့ အခါမှာ set ကိုသုံးတယ်။
 - Unique Element ကို သိမ်းချင်တယ်ဆိုရင် `set` ကိုသုံးလို့ရတယ်။
 - Set သည် order ကို presearch မလုပ်ဘူး။
