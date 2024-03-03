@@ -588,6 +588,29 @@ print("bool(())", bool(()))  # False
 ID is unique identifier.
 
 ```python
+x = 10
+y = 20
+
+print("Id of x", id(x))  # 4366905824
+print("Id of y", id(y))  # 4366906144
+
+print("Id of x", hex(id(x)))  # 0x1061eb1e0
+print("Id of y", hex(id(y)))  # 0x1061eb320
+
+x = 10
+y = 10
+
+print("Id of x", id(x))  # 4360073696
+print("Id of y", id(y))  # 4360073696
+
+print("Id of x", hex(id(x)))  # 0x103e171e0
+print("Id of y", hex(id(y)))  # 0x103e171e0
+```
+
+C code level မှာ 10 တန်ဖိုးကို interpreter ထဲမှာ အသစ်ထပ်ပြီး create မလုပ်တော့ပဲ ရှိပြီးသား 10 တန်ဖိုးကို
+ပြန်ပြီးယူသုံးလိုက်ခြင်းအားဖြင့် storage space ( or ) memory ကို သက်သာစေပါတယ်။
+
+```python
 x = 500
 y = 500
 
@@ -620,7 +643,7 @@ print("Id of x ", id(x))  # 4333236688
 print("Id of y ", id(y))  # 4333236688
 ```
 
-- python3
+- run with python3
 
 ```bash
 x is y  True
@@ -629,7 +652,7 @@ Id of x  4310561232
 Id of y  4310561232
 ```
 
-- python2
+- run with python2
 
 ```bash
 ('x is y ', True)
@@ -638,9 +661,10 @@ Id of y  4310561232
 ('Id of y ', 140194292463344)
 ```
 
-## bytes()
+## Bytes `bytes()`
 
-bytes must be in range 0 to 256. Bytes သည် ပြောင်းလဲခြင်း(mutate) လုပ်လို့မရပါဘူး။
+bytes must be in range 0 to 256. Bytes သည် ပြောင်းလဲခြင်း(mutate) လုပ်လို့မရပါဘူး။ bytes ကို read လုပ်မယ်ဆိုရင်တော့
+bytes() ကိုသုံးသင့်ပါတယ်။
 
 ```python
 x = [0, 10, 25, 30]
@@ -651,9 +675,9 @@ print("type my_bytes", type(my_bytes))  # <class 'bytes'>
 print("my_bytes[1]", my_bytes[1])  # 10
 ```
 
-## bytearray()
+## Byte Array `bytearray()`
 
-byte array is immutable.
+byte array is immutable. write လုပ်မယ်ဆိုရင်တော့ bytearray() ကို သုံးသင့်ပါတယ်။
 
 ```python
 x = [0, 10, 25, 30]
@@ -670,79 +694,84 @@ print("my_bytes", my_bytes[0])  # 100
 
 ## List `[]`
 
-- List is **collection of values**.
+- List is **Collection of values ( or ) variables**.
 - List ကို index or အခန်းနံပါတ်တွေနဲ့ ပြန်ခေါ်သုံးလို့ရပါတယ်။
-- List are **heterogeneous**.(Types တွေ အများကြီးပါလို့ရတယ်)
-- List are **Linear Data Structure**
-- List is mutable
+- List is **heterogeneous**. ( Types တွေ အများကြီးပါလို့ရတယ် )
+- List is **Linear Data Structure**
+- List is **mutable**
+- List သည် same collection ကို သိမ်းတဲ့အခါမျိုးမှာ ပိုပြီးတော့ အသုံးပြုကြပါတယ်။
 
 ```python
-ages = [10, 20, 28, 45]
+ages = [10, 20, 28, 45, 18]
+print("Ages ", ages)  # [10, 20, 28, 45, 18]
+print("Ages[0] ", ages[0])  # 10
+print("Ages[3] ", ages[3])  # 45
+print("Len ", len(ages))  # 5
+print("Sum ", sum(ages))  # 121
+print("Average ", sum(ages) / len(ages))  # 24.2
 
-print("Ages ", ages)
-print("Ages[0] ", ages[0])
-print("Ages[3] ", ages[3])
-print("Sum ", sum(ages))
-print("Average ", sum(ages) / len(ages))
+ages.append(20)
+print("Ages ", ages)  # [10, 20, 28, 45, 18, 20]
+ages.remove(18)
+print("Ages ", ages)  # [10, 20, 28, 45, 20]
 ```
 
 ## Tuple `()`
 
 - Tuple is **immutable**
 - Tuple can only readable.
+- Tuple သည် different collection ကို သိမ်းတဲ့ အခါမျိုးမှာ ပိုပြီးတော့ အသုံးပြုကြပါတယ်။
 
 ```python
 ages = (10, 20)
+print("ages ", ages)  # (10, 20)
+print("ages[0] ", ages[0])  # 10
+print("ages[1] ", ages[1])  # 10
+print("len ages ", len(ages))  # 2
+print("type of ages ", type(ages))  # <class 'tuple'>
 
-print("Ages ", ages)
-print("Ages[0] ", ages[0])
-print("Ages[1] ", ages[1])
-print("len ages ", len(ages))
-print("type of ", type(ages))
-# ages[0] = 18
-
-mg_mg = ("Mg Mg", 18, "UCSY")
-print("mg mg", mg_mg[0])
+mg_mg = ("Mg Mg", 13, "UCSY")
+print("mg mg ", mg_mg[0])  # Mg Mg
 ```
 
-## Ranges
+## Range `range()`
 
 - range ကို looping ပတ်တဲ့ အခါမှာ အဓိကသုံးပါတယ်။
 - range ကို counter control လုပ်ဖို့အတွက်သုံးပါတယ်။
 
-### Ranges Syntax
+### Range Syntax
 
 - `range(stop)`
 - `range(start, stop, step)`
 
 ```python
 x = range(3)
+print("type of x ", type(x))  # <class 'range'>
+print("x ", x)  # range(0, 3)
 
-print("typeof x ", type(x))
-print("x ", x)
-for i in range(1, 5):
+for i in range(1, 10, 2):
     print(i)
 ```
 
-## Set `{}`
+## Set `{} | set()`
 
 - Set is **mutable**
 - List ထဲကနေ duplicate value တွေကို ဖယ်ချင်တဲ့ အခါမှာ set ကိုသုံးတယ်။
 - Unique Element ကို သိမ်းချင်တယ်ဆိုရင် `set` ကိုသုံးလို့ရတယ်။
-- set သည် order ကို presearch မလုပ်ဘူး။
+- Set သည် order ကို presearch မလုပ်ဘူး။
 
 ```python
 my_set = {3, 1, 2, 10, 11, 1}
-print('my set ', my_set)
+print("my_set ", my_set)  # {1, 2, 3, 10, 11}
 
 my_set = set([3, 1, 2, 10, 11, 1])
-print('my set ', my_set)
+print("my_set ", my_set)  # {1, 2, 3, 10, 11}
 
 my_set.add(100)
-print('my set ', my_set)
+print("my_set ", my_set)  # {1, 2, 3, 100, 10, 11}
 
 my_set.remove(11)
-print('my set ', my_set)
+print("my_set ", my_set)  # {1, 2, 3, 100, 10}
 ```
 
 ## Frozenset `frozenset()`
