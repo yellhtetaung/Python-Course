@@ -663,7 +663,7 @@ Id of y  4310561232
 
 ## Bytes `bytes()`
 
-bytes must be in range 0 to 256. Bytes is mutable။ bytes ကို read လုပ်မယ်ဆိုရင်တော့
+bytes must be in range 0 to 256. Bytes is immutable။ bytes ကို read လုပ်မယ်ဆိုရင်တော့
 bytes() ကိုသုံးသင့်ပါတယ်။
 
 ```python
@@ -677,7 +677,7 @@ print("my_bytes[1]", my_bytes[1])  # 10
 
 ## Byte Array `bytearray()`
 
-byte array is immutable. write လုပ်မယ်ဆိုရင်တော့ bytearray() ကို သုံးသင့်ပါတယ်။
+byte array is mutable. write လုပ်မယ်ဆိုရင်တော့ bytearray() ကို သုံးသင့်ပါတယ်။
 
 ```python
 x = [0, 10, 25, 30]
@@ -698,7 +698,7 @@ print("my_bytes", my_bytes[0])  # 100
 - List ကို index or အခန်းနံပါတ်တွေနဲ့ ပြန်ခေါ်သုံးလို့ရပါတယ်။
 - List is **heterogeneous**. ( Types တွေ အများကြီးပါလို့ရတယ် )
 - List is **Linear Data Structure**
-- List is **Immutable**
+- List is **mutable**
 - List သည် same collection ကို သိမ်းတဲ့အခါမျိုးမှာ ပိုပြီးတော့ အသုံးပြုကြပါတယ်။
 
 ```python
@@ -718,7 +718,7 @@ print("Ages ", ages)  # [10, 20, 28, 45, 20]
 
 ## Tuple `()`
 
-- Tuple is **mutable**
+- Tuple is **immutable**
 - Tuple can only readable.
 - Tuple သည် different collection ကို သိမ်းတဲ့ အခါမျိုးမှာ ပိုပြီးတော့ အသုံးပြုကြပါတယ်။
 
@@ -755,7 +755,7 @@ for i in range(1, 10, 2):
 
 ## Set `{} | set()`
 
-- Set is **Immutable**
+- Set is **mutable**
 - List ထဲကနေ duplicate value တွေကို ဖယ်ချင်တဲ့ အခါမှာ set ကိုသုံးတယ်။
 - Unique Element ကို သိမ်းချင်တယ်ဆိုရင် `set` ကိုသုံးလို့ရတယ်။
 - Set သည် order ကို presearch မလုပ်ဘူး။
@@ -777,14 +777,18 @@ print("my_set ", my_set)  # {1, 2, 3, 100, 10}
 ## Frozenset `frozenset()`
 
 - frozen set is immutable
-- `frozenset(set)`
+
+### Frozenset Syntax
+
+`frozenset(set)`
 
 ```python
 my_set = {3, 1, 2, 10, 11, 1}
 frozen_set = frozenset(my_set)
 
-print('frozen set ', frozen_set)
-# frozen_set.add(100);
+print("frozen set", frozen_set)
+# frozen_set.add(100)
+# frozen_set.remove(1)
 ```
 
 ## Dictionary
@@ -793,45 +797,45 @@ print('frozen set ', frozen_set)
 - dictionary ကို accept လုပ်တဲ့ အခါမှာ key နဲ့ accept လုပ်ရပါတယ်။
 
 ```python
-students = {"roll-1": "Mg Mg", "roll-2": "Aung Aung"}
+students = {"role-1": "Mg Mg", "role-2": "Aung Aung", "role-3": "Aung Hla"}
 
-print("Dictionary ", students)
+print("Dictionary ", students)  # {'role-1': 'Mg Mg', 'role-2': 'Aung Aung', 'role-3': 'Aung Hla'}
 
-print("Get roll-1 ", students.get('roll-1'))
+print("Get role-1 ", students.get("role-1"))  # Mg Mg
 
-students['roll-2'] = 'Hla Maung'
-print("Dictionary ", students)
+students["role-2"] = "Hla Maung"
+print("Dictionary ", students)  # {'role-1': 'Mg Mg', 'role-2': 'Hla Maung', 'role-3': 'Aung Hla'}
 ```
 
 ## Input Function
+
+`input()`
 
 - python program တွေမှာ ပြင်ပက data input တွေကို လိုချင်ရင် input function ကိုသုံးလို့ရပါတယ်။
 - input က string ကို return ပြန်ပေးမယ်။ ထို့ကြောင့် arithmetic operation တွေ လုပ်တဲ့ အခါမှာ string
   ဖြစ်တဲ့ အတွက်ကြောင့် `+` ဆိုရင် string concat လုပ်ပေးသွားမှာပဲ ဖြစ်ပါတယ်။ ထို့ကြောင့် type cast
   လုပ်ပေးရပါတယ်။
 
-### Input Function Syntax
-
-`input()`
-
 ```python
-x = float(input("Enter x"))
-y = float(input("Enter y"))
+x = float(input("Enter x "))
+y = float(input("Enter y "))
 
 print("Add ", x + y)
 print("Sub ", x - y)
 print("Div ", x / y)
-print("Mult ", x * y)
+print("Mul ", x * y)
 ```
 
 ## Eval Function
+
+`eval()`
 
 - eval function သည် string နှစ်ခုကို evaluate လုပ်တာဖြစ်ပါတယ်။
 - eval function ထဲမှာ python code တွေရေးလို့ရတယ်။
 
 ```python
-x = float(input("Enter x"))
-y = float(input("Enter y"))
+x = float(input("Enter x "))
+y = float(input("Enter y "))
 
 equation = input("Enter equation ")
 z = eval(equation)
@@ -848,6 +852,7 @@ from sys import argv
 
 print("No of command line argument ", len(argv))
 print("command line arguments ", argv)
+print("command line arguments 1 => ", argv[1])
 ```
 
 ## Delete
@@ -858,28 +863,53 @@ print("command line arguments ", argv)
 
 ```python
 x = 10
+
 print("x is ", x)
 
 del x
-# print("x is", x)
+# print("x is ", x)
+```
+
+## None
+
+- variable တစ်ခုကို အသုံးမလိုတော့တဲ့အချိန်မှာ `None` သုံးလို့ရပါတယ်။
+- variable ကို none လုပ်လိုက်ရင် garbage collection ( memory management ) လုပ်လို့ရသွားတယ်။
+
+```python
+x = None
+
+print("x is ", x)  # None
 ```
 
 ## Operator
 
 - Operation လုပ်တဲ့ကောင်တွေကို operator လို့ခေါ်ပါတယ်။
+- Operation လုပ်ဖို့အတွက် လိုက်ရတယ့် ကောင်တွေကို operand လို့ခေါ်ပါတယ်။
 - Type ပေါ်မှာ မူတည်ပြီးတော့ ဘယ် operation လုပ်လို့ရမယ်ဆိုတဲ့ ကန့်သတ်ချက်တွေတော့ ရှိတယ်။
 
-operator &rarr; `+, -, /, *`
-\
-a+b &rarr; operand
+| Title     | Explain      |
+|-----------|--------------|
+| operator  | `+, -, /, *` |
+| operation | a + b        |
+| operand   | a, b         |
 
 ### Arithmetic Operator
 
 `+, -, /, *`
 
+- arithmetic operator တွေသည် number type တွေမှာပဲ အလုပ်လုပ်ပါတယ်။
 - arithmetic operator တွေသည် type တူမှ operation လုပ်လို့ရတယ်။
-- arithmetic operator တွေရဲ့ type တွေသည် ကြီးတဲ့ ကောင်တွေရဲ့ type ကိုယူပြီးတော့ output ထုတ်ပေးတယ်။ (float သည် integer
-  ထက်ကြီးပါတယ်)
+- arithmetic operator တွေရဲ့ type တွေသည် ကြီးတဲ့ ကောင်တွေရဲ့ type ကိုယူပြီးတော့ output ထုတ်ပေးတယ်။ ( float သည် integer
+  ထက်ကြီးပါတယ် )
+
+```python
+x = 2
+y = 3
+z = True
+
+print("x + y + z ", x + y + z)  # 6
+print("0.2 + 1 ", type(0.2 + 1))  # <class 'float'>
+```
 
 ### Relational Operator
 
@@ -888,7 +918,7 @@ a+b &rarr; operand
 - Greater than equal `>=`
 - Greater than `>`
 
-1. relational operator သည် Boolean ကို output ထုတ်ပေးတယ်။
+1. relational operator သည် Boolean Type ( True | False ) ကိုပဲ output ထုတ်ပေးတယ်။
 2. relational operator တွေမှာ string တွေကို dictionary order နဲ့ စစ်ပါတယ်။
 3. relational operator တွေမှာ list, tuple တွေကို element တစ်ခုချင်းစီကို တိုက်စစ်ပါတယ်။
 
@@ -896,22 +926,23 @@ a+b &rarr; operand
 x = 20
 y = 15
 
-print("x < y ", x < y)
-print("x > y ", x > y)
-print("10 >= 10", 10 >= 10)
-print("10 <= 10", 10 <= 10)
+print("x < y ", x < y)  # False
+print("x > y ", x > y)  # True
+print("10 >= 10", 10 >= 10)  # True
+print("10 <= 10", 10 <= 10)  # True
 
-print("'apple' > 'orange'", 'apple' > 'orange')  # False
-print("'apple' < 'orange'", 'apple' < 'orange')  # True
+print("'apple' > 'orange' ", "apple" > "orange")  # False
+print("'apple' < 'orange' ", "apple" < "orange")  # True
 
-# print("'apple' < 3", 'apple' < 3)  # True
-print("True > True", True > True)
-print("True > False", True > False)
+# print("'apple' < 3 ", "apple" < 3)
+print("True > True ", True > True)  # False
+print("True > False ", True > False)  # True
 
-print("True > 10", True > 10)
+print("True > 10 ", True > 10)  # False
 
-print(" 3 > 2 > 1 ", 3 > 2 > 1)  # 3 > 2 and 2 > 1
-print("True > 1 ", True > 1)
+# Relational Operator Changing
+print("3 > 2 > 1 ", 3 > 2 > 1)  # True ( 3 > 2 and 2 > 1 )
+print("True > 1 ", True > 1)  # False
 ```
 
 ### Equality Operator
@@ -920,23 +951,20 @@ print("True > 1 ", True > 1)
 - Not Equal `!=`
 
 ```python
-print("10 == 10", 10 == 10)
-print("10 != 10", 10 != 10)
+print("10 == 10", 10 == 10)  # True
+print("10 != 10", 10 != 10)  # False
 
 lst1 = [10, 20, 50]
 lst2 = [10, 20, 50]
 
-print("lst1 == lst2", lst1 == lst2)
-print("lst1 > lst2", lst1 > lst2)
-print("lst1 < lst2", lst1 < lst2)
+print("lst1 == lst2 ", lst1 == lst2)  # True
+print("lst1 != lst2 ", lst1 != lst2)  # False
 
 tp1 = (10, 20, 50)
 tp2 = (20, 30, 40)
 
-print("tp1 > tp2", tp1 > tp2)
-print("tp1 < tp2", tp1 < tp2)
-print("tp1 != tp2", tp1 != tp2)
-print("tp1 == tp2", tp1 == tp2)
+print("tp1 == tp2 ", tp1 == tp2)  # False
+print("tp1 != tp2 ", tp1 != tp2)  # True
 ```
 
 ### Logical Operator
@@ -954,7 +982,7 @@ print("False and False", False and False)  # False
 print("False and True", False and True)  # False
 ```
 
-##### And Semantic
+#### Semantic
 
 ဘယ်ဘက်က value သည် falsy ဖြစ်နေခဲ့မယ်ဆိုရင် ညာဘက်ကို ဆက်ပြီးအလုပ်မလုပ်တော့ဘူး။ truthy ဖြစ်တယ်ဆိုတော့မှ ညာဘက်ကို
 အလုပ်လုပ်ပါတယ်။
@@ -962,6 +990,7 @@ print("False and True", False and True)  # False
 - If left is truthy return right hand side.
 
 ```python
+# Left Truthy
 print(" 'Hello' and 1 ", 'Hello' and 1)  # 1
 print(" 'Hello' and 300 ", 'Hello' and 300)  # 300
 ```
@@ -969,6 +998,7 @@ print(" 'Hello' and 300 ", 'Hello' and 300)  # 300
 - If left is falsy return left hand side.
 
 ```python
+# Left Falsy
 print(" '' and 'Hello' ", '' and 'Hello')  # ''
 print(" 0 and 'Hello' ", 0 and 'Hello')  # 0
 print(" [] and 'Hello' ", [] and 'Hello')  # []
@@ -985,7 +1015,7 @@ print("False or False", False or False)  # False
 print("False or True", False or True)  # False
 ```
 
-##### Or Semantic
+#### Semantic
 
 ဘယ်ဘက်က truthy ဖြစ်ခဲ့ရင် ညာဘက်ကို ဆက်ပြီးတော့ အလုပ်မလုပ်တော့ဘူး။ falsy ဖြစ်နေတယ် ဆိုတော့မှ ညာဘက်ကို ဆက်ပြီးတော့
 အလုပ်လုပ်ပါတယ်။
@@ -993,19 +1023,59 @@ print("False or True", False or True)  # False
 - If left is truthy return left hand side.
 
 ```python
-print("True or True", True or True)  # True
-print(" 'hello' or 0 => ", 'hello' or 0)  # hello
-print(" 1 or 0 => ", 1 or 0)  # 1
-print(" [1,20] or 0 => ", [1, 20] or 0)  # [1, 20]
+# Left Truthy
+print("'hello' or 0 ", "hello" or 0)  # hello
+print("1 or 0 ", 1 or 0)  # 1
+print("[1, 20] or 0 ", [1, 20] or 0)  # [1, 20]
 ```
 
 - If left is falsy return right hand side
 
 ```python
+# Left Falsy
 print("False or 'Hello' ", False or 'Hello')  # Hello
 print("'' or 'Hello' ", '' or 'Hello')  # Hello
 print("'' or 1000 ", '' or 1000)  # 1000
 print("[] or 1000 ", [] or 1000)  # 1000
+```
+
+#### And & Or Semantic
+
+```python
+def getTrue():
+    print("Get True")
+    return True
+
+
+def getFalse():
+    print("Get False")
+    return False
+
+# And
+# two time print Get True
+# print("getTrue and getTrue ", getTrue() and getTrue())
+
+# one time print Get False
+# print("getFalse and getTrue ", getFalse() and getTrue())
+
+# two time print Get False and Get False
+# print("getTrue and getFalse ", getTrue() and getFalse())
+
+# one time print Get False
+# print("getFalse and getFalse ", getFalse() and getFalse())
+
+# Or
+# one time print Get True
+# print("getTrue or getTrue ", getTrue() or getTrue())
+
+# two time print Get False and Get True
+# print("getFalse or getTrue ", getFalse() or getTrue())
+
+# one time print Get True
+# print("getTrue or getFalse ", getTrue() or getFalse())
+
+# two time print Get False and Get False
+# print("getFalse or getFalse ", getFalse() or getFalse())
 ```
 
 #### Not Operator
