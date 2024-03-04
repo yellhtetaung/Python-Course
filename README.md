@@ -1384,3 +1384,76 @@ print("x is ", x)  # HelloWorldHelloWorldHelloWorld
 str = "How " "are you"
 print("str ", str)  # How are you
 ```
+
+## if Statement
+
+```python
+if condition: statement
+
+# or
+
+if condition:
+    statement1
+    statement2
+    statement3
+```
+
+- Condition is truthy then do block
+
+```python
+raining = input("is raining outside Yes/No ")
+
+if raining == "Yes":
+    print("Take umbrella")
+    print("Take raincoat")
+print("Go outside")
+```
+
+## if-else Statement
+
+```python
+if condition:
+    statement
+else:
+    statement
+```
+
+- Condition is truthy then do block
+- Condition is falsy then do block in else statement
+
+```python
+num = float(input("Enter no "))
+
+if num > 0:
+    print("Positive")
+else:
+    print("Zero or negative")
+print("Code end")
+```
+
+## if-elif-else Statement
+
+```python
+if condition:
+    statement
+elif condition:
+    statement
+elif condition:
+    statement
+else:
+    statement
+```
+
+- Condition is truthy then do block
+- Condition is falsy then do next condition, more and more. if `elif` condition truthy then do block
+- Above all condition are falsy then do block in else statement
+
+```python
+if num > 0:
+    print("Positive")
+elif num == 0:
+    print("Zero")
+else:
+    print("Negative")
+print("Code end")
+```
