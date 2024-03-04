@@ -1536,6 +1536,7 @@ for target_list in starred_list:
 ```
 
 - for loop ကို အကြိမ်အရေအတွက် အတိအကျသိတဲ့အခါမှာ loop ပတ်တဲ့အချိန် သုံးပါတယ်။
+- for loop ကို **Counter Control Loop** လို့လည်း ခေါ်ပါတယ်။
 
 ```python
 str = "Hello"
@@ -1583,8 +1584,8 @@ for i in my_list:
     i *= 2
 ```
 
-- အောက်ပါ loop ရဲ့ problem သည် pythonic မဆန်ဘူး။
 - element တွေကို write လုပ်ချင်ရင် -
+- အောက်ပါ loop ရဲ့ problem သည် pythonic မဆန်ဘူး။
 
 ```python
 my_list = [10, 20, 30, 40]
@@ -1592,6 +1593,22 @@ my_list = [10, 20, 30, 40]
 for i in range(len(my_list)):
     print("Item ", my_list[i])
     my_list[i] = my_list[i] * 2
+
+print("My List ", my_list)  # [20, 40, 60, 80]
+```
+
+- အောက်ပါ loop သည် pythonic ဖြစ်ပါတယ်။
+
+```python
+my_list = [10, 20, 30, 40]
+
+for i in my_list:
+    print("I is ", i)
+    i *= 2
+
+for index, value in enumerate(my_list):
+    print("Index ", index, "Value ", value)
+    my_list[index] *= 2
 
 print("My List ", my_list)  # [20, 40, 60, 80]
 ```
@@ -1638,4 +1655,94 @@ else:
     print("for complete normally")
 
 print("End of loop")
+```
+
+## Break `break`
+
+- break သည် ရုတ်တရက် ရပ်လိုက်ချင်တဲ့ အခါမှာ သုံးပါတယ်။
+- break ကို inside loop မှာပဲ ရေးခွင့်ရှိပါတယ်။
+
+```python
+for i in range(10):
+    if i == 5:
+        break
+    print("I ", i)
+
+print("End of loop ", i)  # 5
+```
+
+- အထက်ပါ code အရ `if` condition မှန်တဲ့အခါမှာ loop ကို ဆက်မလုပ်တော့စေပဲ ရပ်ပစ်လိုက်တာပဲ ဖြစ်ပါတယ်။ ထို့ကြောင့် i
+  တန်ဖိုးသည် 5 ဖြစ်နေတာပဲ ဖြစ်ပါတယ်။
+
+## Continue `continue`
+
+- တစ်ဆင့်ကျော်ချင်တဲ့အခါမှာ သုံးပါတယ်။
+- continue ကို inside loop မှာပဲ သုံးလို့ရပါတယ်။
+- continue သည် `for` loop ရဲ့ `else` statement ကို run ပါတယ်။
+
+```python
+for i in range(10):
+    if i == 5:
+        continue
+    print("I ", i)
+
+print("End of loop ", i)  # 9
+```
+
+- အထက်ပါ code အရ `if` condition မှန်တဲ့အခါမှာ 5 ကို ကျော်ပြီးတော့ ဆက်လုပ်သွားတဲ့အတွက်ကြောင့် result မှာ 5 မပါတာပဲ
+  ဖြစ်ပါတယ်။
+
+## Pass `pass`
+
+- pass is same with empty.
+- class, method and definition တွေမှာ empty ထားခဲ့ချင်ရင် သုံးလို့ရပါတယ်။
+
+```python
+class Human:
+    pass
+
+
+print("End of program")
+```
+
+## While Loop
+
+- while loop ကို **Connection Control Loop** လို့လည်း ခေါ်ပါတယ်။
+- အကြိမ်အရေအတွက်ကို အတိအကျ မသိတဲ့အခါမှာ `while` loop ကို သုံးပါတယ်။
+- while သည်လည်း truthy or falsy မှာ အလုပ်လုပ်ပါတယ်။
+
+```python
+my_list = [10, 20, 22, 30, 40]
+
+user_no = int(input("Enter a number to find in list "))
+found = False
+index = 0
+
+while not found and (index < len(my_list)):
+    if my_list[index] == user_no:
+        print("Found at index ", index)
+        found = True
+    else:
+        index += 1
+
+print("End of while")
+```
+
+## Nested Loop
+
+- loop ထဲမှာ loop ထပ်ရှိတာကို nested loop လို့ခေါ်ပါတယ်။
+- outer loop တစ်ခေါက်မှာ inner loop အကုန် run တယ်။ inner loop ပြီးသွားတဲ့ အခါမှာ outer loop နောက်ထပ် တစ်ခေါက် ထပ် run
+  ပါတယ်။
+
+```python
+digit = "012"
+char_string = "ABC"
+special_char = "@#$#"
+
+for d in digit:
+    for c in char_string:
+        for s in special_char:
+            print("Password ", d + c + s)
+
+print("end of nested loop")
 ```
