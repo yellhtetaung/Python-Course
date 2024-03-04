@@ -1088,9 +1088,60 @@ print("not False ", not False)  # True
 print("not 'Hello' ", not 'Hello')  # False
 ```
 
+## Equality Comparison
+
+- compound type အချင်းချင်း equality comparison လုပ်မယ်ဆိုလျှင်
+    - base type တူရမယ်။
+    - inner value ( or ) element တွေလည်း တူရပါမယ်။
+
+```python
+print("True == 1 ", True == 1)  # True
+print("False == 0 ", False == 0)  # True
+
+print("'True' == 0 ", "True" == 0)  # False
+
+lst1 = [1, 2, 3]
+lst2 = ["1", 2, 3]
+
+tp1 = (1, 2, 3)
+tp2 = (1, 2, 3)
+
+print("lst1 == lst2 ", lst1 == lst2)  # False
+print("lst1 == tp1 ", lst1 == tp1)  # False
+print("tp1 == tp2 ", tp1 == tp2)  # True
+
+set1 = {1, 2, 3}
+set2 = {1, 2, 3}
+
+print("set1 == set2 ", set1 == set2)  # True
+```
+
+## Sequence Comparison
+
+- Ordering comparison တွေသည် sequence type ( tuple, list and range ) တွေမှာရပါတယ်။
+- sequence comparison မှာ `>=, <=` မှာ `=` ကို ထည့်မတွက်ပါဘူး။
+
+### What is sequence type?
+
+- ၎င်း element တွေကို index နဲ့ သွားလို့ရတယ်။
+- ၎င်းသည် order ကို preserve လုပ်တယ်။ ၎င်းကို ထည့်လိုက်တဲ့အတိုင်း ပြန်ပြီးတော့ ထုတ်လို့ရတယ်။
+
+### Semantic
+
+- Pairwise comparison လုပ်ရတယ်။ ပထမ element by element တူသလားလို့ comparison လုပ်တယ်။ element by element comparison
+  လုပ်စရာမရှိတော့တဲ့အခါမှာ အရင် element ကုန်သွားတဲ့ကောင် ( length ငယ်တဲ့ကောင် ) က ငယ်တယ်။
+
+```python
+print("[10,20] > [10,20,30] ", [10, 20] > [10, 20, 30])  # False
+print("[10,20] < [5,20,30] ", [10, 20] > [5, 20, 30])  # True
+print("[10,5] < [10,20,30] ", [10, 5] < [10, 20, 30])  # True
+print("[10,20] >= [10,20,30] ", [10, 20] >= [10, 20, 30])  # False
+```
+
 ## Bitwise Operator
 
-bitwise only accept number type.
+Bitwise Operator သည် number type ကိုပဲ လက်ခံတယ်။ နှစ်ဖက်စလုံးကို evaluate လုပ်ဖို့လိုအပ်တယ်ဆိုရင် Bitwise Operator ကို
+သုံးရပါမယ်။
 
 - Bitwise **AND** `&`
 - Bitwise **OR** `|`
@@ -1155,4 +1206,181 @@ print(" 2 ^ 3 ", 2 ^ 3)  # 1
 
 ```python
 print(bin(2), ~2)  # 0b10 -3
+```
+
+### Bitwise Left Operator `<<`
+
+- power နဲ့ တူတယ်။ ( eg. 2 power 1, 2 power 2 )
+
+```python
+print(bin(2), " ", bin(2 << 1), " ", 2 << 1)  # 0b10 0b100 4
+print(bin(2), " ", bin(2 << 2), " ", 2 << 2)  # 0b10 0b100 8
+```
+
+### Bitwise Right Operator `>>`
+
+- division နဲ့တူတယ်။ ( eg. 8 / 2 )
+
+```python
+print(bin(2), " ", bin(8 >> 2), " ", 8 >> 2)  # 0b10 0b10 2
+```
+
+## Compound Assignment ( Assignment Operators )
+
+| Operators |
+|:---------:|
+|    +=     |
+|    -=     |
+|    *=     |
+|    /=     |
+|    %=     |
+|    //=    |
+|    **=    |
+|    &=     |
+|    \|=    |
+|    ^=     |
+|    >>=    |
+|    <<=    |
+
+## Parallel Assignment
+
+Parallel assignment မှာ left hand side ဘက်က အရင်လုပ်တယ်။ ပြီးတော့မှ right hand side ဘက်ကို တိုးသွားတယ်။
+
+- other languages
+
+```python
+x = 1
+y = 2
+
+temp = x
+x = y
+y = temp
+
+print("x is ", x)  # 2
+print("y is ", y)  # 1
+```
+
+- in python
+
+```python
+x = 1
+y = 2
+
+x, y = y, x
+
+print("x is ", x)  # 2
+print("y is ", y)  # 1
+```
+
+## Ternary Operator or Conditional Operator
+
+- Other language တွေမှာဆိုရင် `if` သည် **statement** ဖြစ်ပါတယ်။ Python မှာတော့ `if` သည်
+  **expression** ဖြစ်ပါတယ်။ expression ဖြစ်တဲ့အတွက်ကြောင့် value return ပြန်လို့ရပါတယ်။
+
+```python
+x = float(input("Enter x "))
+y = float(input("Enter y "))
+
+maximum = x if x > y else y
+print("Maximum ", maximum)
+```
+
+## Identity Operator `is | is not`
+
+- primitive type တွေမှာ value တူတယ်ဆိုရင်တော့ cache အနေနဲ့ သိမ်းထားတယ်။ empty tuple တွေဆိုရင်လည်း cache အနေနဲ့
+  သိမ်းထားပါတယ်။
+- ၎င်း value ကို ပြန်ခေါ်သုံးတဲ့ ပြန်ခေါ်သုံးထဲအခါမှာ cache ထဲက value ကို ပြန်ခေါ်သုံးတာ ဖြစ်တဲ့ အတွက်ကြောင့် id
+  တစ်ခုဖြစ်တာဖြစ်ပါတယ်။
+- is operator သည် same memory location address မှာ ရှိလား မရှိဘူးလား ကို စစ်တာပဲ ဖြစ်ပါတယ်။
+
+```python
+x = 10
+y = 10
+
+print("id x ", id(x), "id y ", id(y))  # id x  4322259424 id y  4322259424
+print("x is y ", x is y)  # True
+
+a = [10, 20, 30]
+b = [10, 20, 30]
+c = b
+
+print("id(a) ", id(a), "id(b) ", id(b))  # id(a)  4299267840 id(b)  4299368320
+print("a is b ", a is b)  # False
+print("c is b ", c is b)  # True
+
+d = ()
+e = ()
+
+print("d is e ", d is e)  # True
+
+str1 = "Hello"
+str2 = "Hello"
+
+print("str1 is str2 ", str1 is str2)  # True
+```
+
+## Membership Operator `in | not in`
+
+- dictionary ဆိုရင်တော့ key ကို စစ်ပါတယ်။ ကျန်တဲ့ ကောင်တွေဆိုရင်တော့ value ( or ) element ကို စစ်ပါတယ်။
+
+```python
+str1 = "Hello"
+print("'Hell' in str1 ", "Hell" in str1)  # True
+
+lst = [10, 20, 30]
+print("10 in lst ", 10 in lst)  # True
+
+my_dict = {"one": "value 1 ", "two": "value 2"}
+print("'one' in my_dict ", "one" in my_dict)  # True
+
+my_tuple = ("hello", "python")
+print("'hello' in my_tuple ", "hello" in my_tuple)  # True
+print("'Java' not in  my_tuple ", "Java" not in my_tuple)  # True
+```
+
+## Operator precedence
+
+| Operator                        | Description                                 |
+|---------------------------------|---------------------------------------------|
+| **                              | Exponentition                               |
+| -, +, -                         | Complement, unary plus and minus            |
+| *,/,%,//                        | Multiply, divide, module and floor division |
+| +, -                            | Additional and substraction                 |
+| >>, <<                          | Right and left bitwise shift                |
+| &                               | Bitwise AND                                 |
+| ^, \|                           | Bitwise exclusive OR                        |
+| <=, <>, >=                      | Comparison operator                         |
+| <>, ==, !=                      | Equality operator                           |
+| =, %=, /=, //=, -=, +=, *=, **= | Compound assignment ( Assignment operator ) |
+| is, is not                      | Identity operator                           |
+| in, not in                      | Membership operator                         |
+| not, or, and                    | Logical operator                            |
+
+### Operator Associativity
+
+- operator အများစုသည် operator precedence အရ level တူနေခဲ့မယ်ဆိုရင် left to right ကို အလုပ်လုပ်ပါတယ်။
+- assignment operator တွေကတော့ right to left ကို အလုပ်လုပ်တယ်။
+
+```python
+x = 10 / 5 * 3
+print("x is ", x)  # 6.0
+```
+
+### Operator with String
+
+- Additional operator သည် number တွေဆိုရင် additional process ကိုလုပ်ပြီးတော့ string တွေဆိုရင် concatination process ကို
+  အလုပ်လုပ်ပါတယ်။
+- Multiply operator သည် string ဆိုရင်တော့ ပေးလိုက်တဲ့ value အပေါ်မူတည်ပြီးတော့ ဘယ်နှစ်ကြိမ် concatination
+  လုပ်မလဲဆိုတဲ့ လုပ်ဆောင်ချက်ကို လုပ်ဆောင်ပါတယ်။
+- Python မှာ string နှစ်ခုက ဘေးချင်းကပ်လျက် ရှိနေတယ်ဆိုရင် concatination process ကို လုပ်ပေးပါတယ်။
+
+```python
+x = "Hello" + "World"
+print("x is ", x)  # HelloWorld
+
+x *= 3
+print("x is ", x)  # HelloWorldHelloWorldHelloWorld
+
+str = "How " "are you"
+print("str ", str)  # How are you
 ```
