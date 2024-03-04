@@ -1457,3 +1457,185 @@ else:
     print("Negative")
 print("Code end")
 ```
+
+## if Statment Example
+
+- eg - 1 ( pass condition )
+
+```python
+myanmar = float(input("Enter mark for myanmar "))
+english = float(input("Enter mark for english "))
+math = float(input("Enter mark for math "))
+
+if myanmar >= 40 and english >= 40 and math >= 40:
+    print("Pass the exam")
+else:
+    print("Fail")
+
+print("Code end")
+```
+
+- eg - 2 ( fail condition )
+
+```python
+myanmar = float(input("Enter mark for myanmar "))
+english = float(input("Enter mark for english "))
+math = float(input("Enter mark for math "))
+
+if myanmar < 40 or english < 40 or math < 40:
+    print("Fail")
+else:
+    print("Pass the exam")
+
+print("Code end")
+```
+
+- eg - 3 ( nested if with pass condition )
+
+```python
+myanmar = float(input("Enter mark for myanmar "))
+english = float(input("Enter mark for english "))
+math = float(input("Enter mark for math "))
+
+if myanmar >= 40:
+    if english >= 40:
+        if math >= 40:
+            print("Pass the exam")
+        else:
+            print("Fail")
+    else:
+        print("Fail")
+else:
+    print("Fail")
+
+print("Code end")
+```
+
+- eg - 4 ( after refector eg - 1 )
+
+```python
+myanmar = float(input("Enter mark for myanmar "))
+english = float(input("Enter mark for english "))
+math = float(input("Enter mark for math "))
+
+pass_mark = 40
+
+if myanmar >= pass_mark and english >= pass_mark and math >= pass_mark:
+    print("Pass the exam")
+else:
+    print("Fail")
+
+print("Code end")
+```
+
+## For in Loop
+
+```python
+for target_list in starred_list:
+    statement
+```
+
+- for loop ကို အကြိမ်အရေအတွက် အတိအကျသိတဲ့အခါမှာ loop ပတ်တဲ့အချိန် သုံးပါတယ်။
+
+```python
+str = "Hello"
+for i in str:
+    print("Char ", i)
+
+my_list = ["one", "two", "three", "four", "five"]
+for item in my_list:
+    print("Item ", item)
+
+my_dict = {"1": "Red", "2": "Green", "3": "Blue"}
+for item in my_dict:
+    print("Item in dic ", item)  # return key values
+
+my_set = {"Orange", "Banana", "Apple"}
+for item in my_set:
+    print("Item in set ", item)
+```
+
+- example with exam project
+
+```python
+number_of_subject = int(input("Enter number of subject "))
+
+pass_mark = 40
+is_pass = True
+
+for i in range(number_of_subject):
+    mark = float(input("Enter mark for subject " + str(i) + " "))
+    is_pass = is_pass and mark >= 40
+
+if is_pass:
+    print("Pass the exam")
+else:
+    print("Fail the exam")
+```
+
+- element တွေကို read ပဲ လုပ်ချင်တယ်ဆိုရင် -
+
+```python
+my_list = [10, 20, 30, 40]
+
+for i in my_list:
+    print("I is ", i)
+    i *= 2
+```
+
+- အောက်ပါ loop ရဲ့ problem သည် pythonic မဆန်ဘူး။
+- element တွေကို write လုပ်ချင်ရင် -
+
+```python
+my_list = [10, 20, 30, 40]
+
+for i in range(len(my_list)):
+    print("Item ", my_list[i])
+    my_list[i] = my_list[i] * 2
+
+print("My List ", my_list)  # [20, 40, 60, 80]
+```
+
+- dictionary တွေကို key & value ကို လိုချင်တဲ့ အခါမှာ
+
+```python
+for key, value in my_dict.items():
+    print("Key ", key, "value ", value)
+```
+
+## for else Loop
+
+```python
+for target_list in starred_list:
+    statement
+else:
+    statement
+```
+
+- `for else` loop သည် normal loop ပြီးသွားတဲ့ အခါမှာ `else` statement ကို ဆက် run ပါတယ်။
+
+```python
+my_list = [1, 2, 3, 4]
+
+for i in my_list:
+    print("Item ", i)
+else:
+    print("for complete normally")
+
+print("End of loop")
+```
+
+- `for else` loop မှာ `break` နဲ့ ထွက်ရင်တော့ `else` ကို မ run တော့ပါဘူး။
+
+```python
+my_list = [1, 2, 3, 4]
+
+for i in my_list:
+    print("Item ", i)
+    if i == 3:
+        break
+else:
+    print("for complete normally")
+
+print("End of loop")
+```
