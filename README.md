@@ -1746,3 +1746,5 @@ for d in digit:
 
 print("end of nested loop")
 ```
+
+## Strings
